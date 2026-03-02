@@ -1,75 +1,209 @@
 <!DOCTYPE html>
 <html lang="kk">
 <head>
-<meta charset="UTF-8">
-<title>Виртуалды зертхана</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Виртуалды зертхана | Бақытова Аида</title>
+    <style>
+        /* НЕГІЗГІ ПАРАМЕТРЛЕР */
+        :root {
+            --bg-dark: #0a192f;
+            --accent-blue: #2563eb;
+            --light-blue: #60a5fa;
+            --text-white: #ffffff;
+            --text-gray: #94a3b8;
+            --card-white: #ffffff;
+            --gradient: linear-gradient(180deg, #0f172a 0%, #1e3a8a 100%);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-white);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* HEADER */
+        .header {
+            padding: 20px 0;
+            background: rgba(255, 255, 255, 0.03);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-box {
+            background: var(--accent-blue);
+            width: 45px;
+            height: 45px;
+            border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .header-text h2 { font-size: 1.1rem; letter-spacing: 1px; line-height: 1; }
+        .header-text span { font-size: 0.75rem; color: var(--text-gray); text-transform: uppercase; }
+
+        /* HERO SECTION */
+        .hero {
+            padding: 80px 0;
+            background: var(--gradient);
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero h1 span { color: var(--light-blue); }
+
+        .hero p {
+            color: #cbd5e1;
+            max-width: 700px;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+
+        /* BUTTONS */
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-main {
+            display: inline-block;
+            background: var(--accent-blue);
+            color: white;
+            padding: 16px 35px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 16px 35px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: 0.3s;
+        }
+
+        .btn-main:hover, .btn-secondary:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-main:hover { background: #1d4ed8; }
+
+        /* ABOUT SECTION */
+        .about {
+            background: var(--card-white);
+            color: #1e293b;
+            padding: 80px 0;
+            border-radius: 40px 40px 0 0;
+            margin-top: -30px;
+        }
+
+        .section-title {
+            display: flex; align-items: center; gap: 12px;
+            font-size: 1.8rem; font-weight: 700; margin-bottom: 30px;
+        }
+
+        .section-title::before {
+            content: ""; width: 6px; height: 35px; background: var(--accent-blue); border-radius: 10px;
+        }
+
+        .author-card {
+            background: #f1f5f9; border-radius: 25px; padding: 35px;
+            margin-top: 50px; border: 1px solid #e2e8f0; max-width: 500px;
+        }
+
+        @media (max-width: 600px) {
+            .hero-btns { flex-direction: column; }
+            .btn-main, .btn-secondary { text-align: center; width: 100%; }
+        }
+    </style>
 </head>
 <body>
 
-<!-- HEADER -->
-<div class="header">
-    <div class="logo">🧪</div>
-    <div>
-        <h2>ВИРТУАЛДЫ</h2>
-        <span>ЗЕРТХАНА</span>
-    </div>
-</div>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-box">🧪</div>
+                <div class="header-text">
+                    <h2>ВИРТУАЛДЫ</h2>
+                    <span>ЗЕРТХАНА</span>
+                </div>
+            </div>
+        </div>
+    </header>
 
-<!-- HERO -->
-<section class="hero">
-    <div class="badge">⚙️ АВТОРЛЫҚ ЖОБА</div>
+    <section class="hero">
+        <div class="container">
+            <div class="badge">⚙️ АВТОРЛЫҚ ЖОБА</div>
+            <h1>«Химия пәні мұғалімдеріне арналған <span>виртуалды зертхана</span>»</h1>
+            <p>
+                Білім беру үдерісін цифрландыру жағдайында химия пәнін оқытудың
+                тиімділігін арттыруға бағытталған инновациялық білім беру ресурсы.
+            </p>
+            
+            <div class="hero-btns">
+                <a href="labs.html" class="btn-main">Зертханаларды ашу &nbsp; ❯</a>
+                <a href="instructions.html" class="btn-secondary">Нұсқаулықтар &nbsp; 📖</a>
+            </div>
+        </div>
+    </section>
 
-    <h1>
-        «Химия пәні мұғалімдеріне арналған 
-        <span>виртуалды зертхана</span>»
-    </h1>
+    <section class="about">
+        <div class="container">
+            <div class="section-title">Қысқаша сипаттама</div>
+            <p>«Химия мұғалімдеріне арналған виртуалды зертхана сайты» – химия мұғалімдерінің кәсіби қызметін әдістемелік және цифрлық тұрғыдан қолдауға арналған кешенді электрондық орта.</p>
+            <p>Сайт мазмұнына интерактивті зертханалық жұмыстар, виртуалды тәжірибелер, қауіпсіздік техникасы бойынша нұсқаулықтар енгізілген.</p>
 
-    <p>
-        Білім беру үдерісін цифрландыру жағдайында химия пәнін оқытудың
-        тиімділігін арттыруға бағытталған инновациялық білім беру ресурсы.
-    </p>
-
-    <a href="labs.html" class="btn">Зертханаларды ашу →</a>
-</section>
-
-<!-- DESCRIPTION -->
-<section class="about">
-    <h2>Қысқаша сипаттама</h2>
-
-    <p>
-        «Химия мұғалімдеріне арналған виртуалды зертхана сайты» – 
-        химия мұғалімдерінің кәсіби қызметін әдістемелік және цифрлық тұрғыдан 
-        қолдауға арналған кешенді электрондық орта.
-    </p>
-
-    <p>
-        Сайт мазмұнына интерактивті зертханалық жұмыстар, виртуалды тәжірибелер,
-        қауіпсіздік техникасы бойынша нұсқаулықтар енгізілген.
-    </p>
-
-    <div class="author">
-        <div class="icon">👤</div>
-        <h3>Автор туралы</h3>
-        <h2>Рақымжанова Айғаным</h2>
-        <p>Цифрлық ресурстарды әзірлеуші және жоба авторы</p>
-    </div>
-</section>
-
-<!-- LINKS -->
-<section class="links">
-    <h2>Қолданылған ресурстар</h2>
-    <a href="https://phet.colorado.edu/">PhET</a>
-    <a href="https://chemcollective.org/vlabs">ChemCollective</a>
-</section>
-
-<!-- FEEDBACK -->
-<section class="feedback">
-    <h2>Кері байланыс</h2>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdao5ybHeBxNue6o_8O8LIFhLciQO0ARnVjFMlSSWI6SnOzFQ/viewform" class="btn">
-        Форманы ашу
-    </a>
-</section>
+            <div class="author-card">
+                <div style="background: var(--accent-blue); width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; color: white;">👤</div>
+                <h4 style="color: var(--accent-blue); font-size: 0.8rem; letter-spacing: 1px;">АВТОР ТУРАЛЫ</h4>
+                <h2 style="font-size: 1.6rem; margin: 10px 0;">Бақытова Аида</h2>
+                <p style="color: #64748b; font-style: italic;">Цифрлық ресурстарды әзірлеуші және жоба авторы</p>
+            </div>
+        </div>
+    </section>
 
 </body>
 </html>
