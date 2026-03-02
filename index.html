@@ -3,36 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Басты бет | Виртуалды зертхана</title>
-    <style>
-        :root { --primary: #10b981; --bg: #f0fdf4; --dark: #064e3b; }
-        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); color: var(--dark); margin: 0; }
-        .hero { padding: 100px 0; background: linear-gradient(135deg, #10b981 0%, #064e3b 100%); color: white; text-align: center; border-radius: 0 0 50px 50px; }
-        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
-        .hero h1 { font-size: 3rem; margin-bottom: 20px; }
-        .hero-btns { display: flex; gap: 20px; justify-content: center; margin-top: 40px; }
-        .btn { padding: 18px 40px; border-radius: 15px; text-decoration: none; font-weight: bold; transition: 0.3s; }
-        .btn-main { background: white; color: var(--primary); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        .btn-sec { border: 2px solid white; color: white; }
-        .btn:hover { transform: translateY(-5px); }
-        footer { margin-top: 100px; padding: 40px; text-align: center; background: #064e3b; color: white; border-radius: 50px 50px 0 0; }
-    </style>
+    <title>Виртуалды Химия Зертханасы</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <section class="hero">
-        <div class="container">
-            <h1>Химия пәні мұғалімдеріне арналған <br><span>Виртуалды зертхана</span></h1>
-            <p>Тәжірибелерді заманауи технологиялар арқылы өткізуге мүмкіндік беретін инновациялық ресурс.</p>
-            <div class="hero-btns">
-                <a href="labs.html" class="btn btn-main">Зертханаларды ашу 🧪</a>
-                <a href="instructions.html" class="btn btn-sec">Нұсқаулықтар 📖</a>
+
+<header class="header">
+    <div class="container flex-header">
+        <div class="logo-area">
+            <span class="logo-icon">🧪</span>
+            <div class="logo-text">
+                <h2>ВИРТУАЛДЫ</h2>
+                <span>ЗЕРТХАНА</span>
             </div>
         </div>
-    </section>
+    </div>
+</header>
 
-    <footer id="footer-shared">
-        <p>Автор: Рақымжанова Айғаным Бақытжанқызы</p>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdao5ybHeBxNue6o_8O8LIFhLciQO0ARnVjFMlSSWI6SnOzFQ/viewform" target="_blank" style="color: #34d399; text-decoration: none; font-weight: bold;">⭐ Кері байланыс және бағалау ↗</a>
-    </footer>
+<section class="hero">
+    <div class="container">
+        <div class="badge">✨ АВТОРЛЫҚ ЖОБА</div>
+        <h1>Химия пәні мұғалімдеріне арналған <br><span>виртуалды зертхана</span></h1>
+        [span_0](start_span)<p>Білім беру үдерісін цифрландыру жағдайында химия пәнін оқытудың тиімділігін арттыруға бағытталған инновациялық білім беру ресурсы[span_0](end_span).</p>
+        <div class="hero-btns">
+            <a href="labs.html" class="btn btn-primary">Зертханаларды ашу →</a>
+        </div>
+    </div>
+</section>
+
+<section class="description">
+    <div class="container">
+        <h2 class="section-title">Қысқаша сипаттама</h2>
+        <div class="card">
+            <p>«Химия мұғалімдеріне арналған виртуалды зертхана сайты» – химия мұғалімдерінің кәсіби қызметін әдістемелік және цифрлық тұрғыдан қолдауға арналған кешенді электрондық орта.</p>
+            <p>Сайт мазмұнына интерактивті зертханалық жұмыстар, виртуалды тәжірибелердің 3D модельдері және қауіпсіздік техникасы бойынша нұсқаулықтар енгізілген.</p>
+        </div>
+    </div>
+</section>
+
+<section class="author">
+    <div class="container">
+        <div class="author-card">
+            <div class="author-icon">👩‍енг</div>
+            <div class="author-info">
+                <span class="label">АВТОР ТУРАЛЫ</span>
+                <h3>Рақымжанова Айғаным Бақытжанқызы</h3>
+                [span_1](start_span)<p>Цифрлық ресурстарды әзірлеуші және жоба авторы[span_1](end_span).</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="feedback-area">
+            <h3>ЖОБАНЫ БАҒАЛАҢЫЗ</h3>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdao5ybHeBxNue6o_8O8LIFhLciQO0ARnVjFMlSSWI6SnOzFQ/viewform" class="btn btn-feedback">
+                [span_2](start_span)⭐ Кері байланыс және бағалау[span_2](end_span)
+            </a>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 БАРЛЫҚ ҚҰҚЫҚТАР ҚОРҒАЛҒАН.</p>
+           
+        </div>
+    </div>
+</footer>
+
 </body>
 </html>
