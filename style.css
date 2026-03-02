@@ -1,87 +1,320 @@
-body {
-    margin:0;
-    font-family: Arial;
-    background:#f5f6fa;
-}
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Виртуалды зертхана | Бақытова Аида</title>
+    <style>
+        /* НЕГІЗГІ ПАРАМЕТРЛЕР */
+        :root {
+            --bg-dark: #0a192f;
+            --accent-blue: #2563eb;
+            --light-blue: #60a5fa;
+            --text-white: #ffffff;
+            --text-gray: #94a3b8;
+            --card-white: #ffffff;
+            --gradient: linear-gradient(180deg, #0f172a 0%, #1e3a8a 100%);
+        }
 
-/* HEADER */
-.header {
-    display:flex;
-    align-items:center;
-    gap:10px;
-    padding:15px;
-    background:white;
-}
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-.logo {
-    font-size:30px;
-}
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-/* HERO */
-.hero {
-    background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
-    color:white;
-    padding:40px 20px;
-}
+        /* КОНТЕЙНЕР - ноутбукте жинақы тұру үшін */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-.badge {
-    display:inline-block;
-    background:rgba(255,255,255,0.2);
-    padding:8px 12px;
-    border-radius:20px;
-    margin-bottom:20px;
-}
+        /* HEADER */
+        .header {
+            padding: 20px 0;
+            background: rgba(255, 255, 255, 0.03);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
 
-.hero h1 {
-    font-size:28px;
-}
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
 
-.hero span {
-    color:#4da3ff;
-}
+        .logo-box {
+            background: var(--accent-blue);
+            width: 45px;
+            height: 45px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
 
-.hero p {
-    opacity:0.8;
-}
+        .header-text h2 {
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            line-height: 1;
+        }
 
-.btn {
-    display:inline-block;
-    margin-top:20px;
-    background:#3b82f6;
-    color:white;
-    padding:15px 20px;
-    border-radius:12px;
-    text-decoration:none;
-}
+        .header-text span {
+            font-size: 0.75rem;
+            color: var(--text-gray);
+            text-transform: uppercase;
+        }
 
-/* ABOUT */
-.about {
-    padding:20px;
-}
+        /* HERO SECTION */
+        .hero {
+            padding: 60px 0;
+            background: var(--gradient);
+        }
 
-.author {
-    background:white;
-    padding:20px;
-    border-radius:20px;
-    margin-top:20px;
-}
+        .badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
 
-.icon {
-    font-size:30px;
-    margin-bottom:10px;
-}
+        .hero h1 {
+            font-size: clamp(1.8rem, 5vw, 3rem); /* Экранға қарай қарип өлшемі өзгереді */
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
 
-/* LINKS */
-.links {
-    padding:20px;
-}
+        .hero h1 span {
+            color: var(--light-blue);
+        }
 
-.links a {
-    display:block;
-    margin:10px 0;
-}
+        .hero p {
+            color: #cbd5e1;
+            max-width: 700px;
+            margin-bottom: 35px;
+            font-size: 1.1rem;
+        }
 
-/* FEEDBACK */
-.feedback {
-    padding:20px;
-}
+        .btn-main {
+            display: inline-block;
+            background: var(--accent-blue);
+            color: white;
+            padding: 16px 35px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s, background 0.2s;
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-main:hover {
+            transform: translateY(-2px);
+            background: #1d4ed8;
+        }
+
+        /* ABOUT SECTION */
+        .about {
+            background: var(--card-white);
+            color: #1e293b;
+            padding: 80px 0;
+            border-radius: 40px 40px 0 0;
+            margin-top: -30px;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .section-title::before {
+            content: "";
+            width: 6px;
+            height: 35px;
+            background: var(--accent-blue);
+            border-radius: 10px;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #475569;
+        }
+
+        /* AUTHOR CARD */
+        .author-card {
+            background: #f1f5f9;
+            border-radius: 25px;
+            padding: 35px;
+            margin-top: 50px;
+            border: 1px solid #e2e8f0;
+            max-width: 500px;
+        }
+
+        .author-icon {
+            background: var(--accent-blue);
+            width: 55px;
+            height: 55px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .author-card h4 {
+            color: var(--accent-blue);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .author-card h2 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+        }
+
+        .author-card p {
+            font-size: 0.95rem;
+            color: #64748b;
+            font-style: italic;
+            margin-bottom: 0;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: #0f172a;
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .btn-feedback {
+            display: inline-block;
+            width: 100%;
+            max-width: 400px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--light-blue);
+            padding: 18px;
+            border-radius: 15px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+
+        .btn-feedback:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .copyright {
+            margin-top: 50px;
+            font-size: 0.8rem;
+            color: #475569;
+            letter-spacing: 1px;
+        }
+
+        /* АДАПТИВТІЛІК (Медиа-запросы) */
+        @media (max-width: 768px) {
+            .about {
+                padding: 60px 0;
+            }
+            .hero {
+                text-align: center;
+            }
+            .header-content {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-box">🧪</div>
+                <div class="header-text">
+                    <h2>ВИРТУАЛДЫ</h2>
+                    <span>ЗЕРТХАНА</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="badge">⚙️ АВТОРЛЫҚ ЖОБА</div>
+            <h1>«Химия пәні мұғалімдеріне арналған <span>виртуалды зертхана</span>»</h1>
+            <p>
+                Білім беру үдерісін цифрландыру жағдайында химия пәнін оқытудың
+                тиімділігін арттыруға бағытталған инновациялық білім беру ресурсы.
+            </p>
+            <a href="labs.html" class="btn-main">Зертханаларды ашу &nbsp; ❯</a>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <div class="section-title">Қысқаша сипаттама</div>
+            <p>«Химия мұғалімдеріне арналған виртуалды зертхана сайты» – химия мұғалімдерінің кәсіби қызметін әдістемелік және цифрлық тұрғыдан қолдауға арналған кешенді электрондық орта.</p>
+            <p>Сайт мазмұнына интерактивті зертханалық жұмыстар, виртуалды тәжірибелердің 3D модельдері, қауіпсіздік техникасы бойынша нұсқаулықтар енгізілген.</p>
+
+            <div class="author-card">
+                <div class="author-icon">👤</div>
+                <h4>Автор туралы</h4>
+                <h2>Бақытова Аида</h2>
+                <p>Цифрлық ресурстарды әзірлеуші және жоба авторы</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">
+                <div class="logo-box" style="width: 35px; height: 35px; font-size: 1.1rem;">⚗️</div>
+                <h3 style="letter-spacing: 1px;">ВИРТУАЛДЫ ХИМИЯ</h3>
+            </div>
+            
+            <p style="color: var(--text-gray); margin-bottom: 30px;">Автор: Бақытова Аида Бақтиярқызы</p>
+            
+            <p style="text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; color: #64748b;">Жобаны бағалаңыз</p>
+            <a href="https://docs.google.com/forms/..." class="btn-feedback">
+                ⭐ Кері байланыс және бағалау &nbsp; ↗
+            </a>
+
+            <div class="copyright">
+                © 2026 БАРЛЫҚ ҚҰҚЫҚТАР ҚОРҒАЛҒАН.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
