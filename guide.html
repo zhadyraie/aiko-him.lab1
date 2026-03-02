@@ -3,236 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мұғалімдерге нұсқаулық</title>
+    <title>Нұсқаулықтар</title>
     <style>
-        :root {
-            --bg-light: #f8fafc;
-            --text-dark: #1e293b;
-            --accent-blue: #2563eb;
-            --border-color: #e2e8f0;
-        }
-
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .title-section {
-            padding: 40px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .title-section h1 {
-            font-size: 2rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            margin: 0;
-        }
-
-        .btn-method {
-            background: var(--accent-blue);
-            color: white;
-            padding: 12px 24px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 0.9rem;
-        }
-
-        .instruction-card {
-            background: white;
-            border-radius: 40px;
-            padding: 40px;
-            margin-bottom: 40px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-        }
-
-        .lab-name {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .class-badge {
-            display: inline-block;
-            background: #1e293b;
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-bottom: 25px;
-        }
-
-        .info-block {
-            border-radius: 20px;
-            padding: 20px;
-            margin-bottom: 15px;
-            border-left: 5px solid;
-        }
-
-        .block-title {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 0.8rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 10px;
-        }
-
-        /* Түстер мен стильдер */
-        .goal { background: #f0f7ff; border-left-color: #3b82f6; }
-        .goal .block-title { color: #3b82f6; }
-
-        .method { background: #fffdf0; border-left-color: #f59e0b; }
-        .method .block-title { color: #f59e0b; }
-
-        .tasks { background: #f8fafc; border: 1px solid #e2e8f0; border-left-color: #1e3a8a; }
-        .tasks .block-title { color: #1e3a8a; }
-
-        .warning { background: #fef2f2; border-left-color: #ef4444; }
-        .warning .block-title { color: #ef4444; }
-
-        .back-link {
-            display: block;
-            text-align: center;
-            margin: 40px 0;
-            color: var(--accent-blue);
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        ul { padding-left: 20px; margin: 0; }
-        li { margin-bottom: 8px; }
+        :root { --primary: #059669; --bg: #ecfdf5; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .inst-block { background: white; border-radius: 20px; padding: 30px; margin-bottom: 25px; border-top: 4px solid var(--primary); }
+        .badge { background: #d1fae5; color: #065f46; padding: 4px 12px; border-radius: 6px; font-weight: bold; }
+        h2 { color: #064e3b; margin-top: 15px; }
     </style>
 </head>
 <body>
-
-<div class="container">
-    <div class="title-section">
-        <h1>Мұғалімдерге<br>нұсқаулық</h1>
-        <a href="#" class="btn-method">Әдістемелік көмек</a>
-    </div>
-
-    <div class="instruction-card">
-        <h2 class="lab-name">Химиялық реакцияларды теңестіру</h2>
-        <span class="class-badge">8-сынып</span>
-        
-        <div class="info-block goal">
-            <div class="block-title">🎯 Оқу мақсаты</div>
-            [span_1](start_span)<p>Зат массасының сақталу заңын білу және химиялық реакция теңдеулерін теңестіруді үйрену[span_1](end_span).</p>
+    <div class="container">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+            <h1>Әдістемелік нұсқау</h1>
+            <a href="index.html" style="text-decoration: none; color: #064e3b; font-weight: bold;">← Басты бет</a>
         </div>
 
-        <div class="info-block method">
-            <div class="block-title">📜 Қолдану кезеңі</div>
-            [span_2](start_span)<p>Жаңа тақырыпты түсіндіру кезінде қолдану ұсынылады[span_2](end_span).</p>
+        <div class="inst-block">
+            <span class="badge">8-СЫНЫП</span>
+            <h2>Газдардың қасиеттері</h2>
+            <p><strong>Оқу мақсаты:</strong> Газдардың көлемдік қатынас заңын қолдануды үйрету.</p>
+            <p><strong>Тапсырма:</strong> Газдардың қысым мен температураға қалай тәуелді екенін түсіндіріңіз.</p>
         </div>
 
-        <div class="info-block tasks">
-            <div class="block-title">📝 Тапсырмалар</div>
-            <ul>
-                [span_3](start_span)<li>Берілген реакция теңдеулерін коэффициенттер қою арқылы теңестіріңіз[span_3](end_span).</li>
-                [span_4](start_span)<li>Неліктен реакцияның екі жағындағы атомдар саны тең болуы керек екенін түсіндіріңіз[span_4](end_span).</li>
-            </ul>
+        <div class="inst-block">
+            <span class="badge">9-СЫНЫП</span>
+            <h2>Тотығу-тотықсыздану реакциялары</h2>
+            <p><strong>Оқу мақсаты:</strong> Тотығу дәрежесі өзгере жүретін реакцияларды түсіну.</p>
+            <p><strong>Тапсырма:</strong> Zn + CuSO₄ → ZnSO₄ + Cu реакциясындағы тотықтырғышты анықтаңыз.</p>
         </div>
     </div>
-
-    <div class="instruction-card">
-        <h2 class="lab-name">pH шкаласы және индикаторлар</h2>
-        <span class="class-badge">8-9 сынып</span>
-        
-        <div class="info-block goal">
-            <div class="block-title">🎯 Оқу мақсаты</div>
-            [span_5](start_span)<p>Ерітінділердің қышқылдығы мен сілтілігін анықтау, pH мәндерін салыстыру[span_5](end_span).</p>
-        </div>
-
-        <div class="info-block method">
-            <div class="block-title">📜 Қолдану кезеңі</div>
-            [span_6](start_span)<p>Зертханалық жұмыс немесе бекіту сабағында[span_6](end_span).</p>
-        </div>
-
-        <div class="info-block tasks">
-            <div class="block-title">📝 Тапсырмалар</div>
-            <ul>
-                [span_7](start_span)<li>Түрлі тұрмыстық заттардың (сөлт, сабын және т.б.) pH мәнін анықтаңыз[span_7](end_span).</li>
-                [span_8](start_span)<li>Индикаторлардың түсі ерітінді ортасына қалай тәуелді екенін жазыңыз[span_8](end_span).</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="instruction-card">
-        <h2 class="lab-name">Ерітінділер концентрациясы</h2>
-        <span class="class-badge">9-сынып</span>
-        
-        <div class="info-block goal">
-            <div class="block-title">🎯 Оқу мақсаты</div>
-            [span_9](start_span)<p>Еріген заттың массалық үлесін есептеу және ерітінді дайындау дағдыларын қалыптастыру[span_9](end_span).</p>
-        </div>
-
-        <div class="info-block tasks">
-            <div class="block-title">📝 Тапсырмалар</div>
-            <ul>
-                [span_10](start_span)<li>Белгілі бір концентрациядағы ерітіндіні виртуалды түрде дайындаңыз[span_10](end_span).</li>
-                [span_11](start_span)<li>Ерітіндіге су қосқанда немесе еріген затты қосқанда концентрацияның қалай өзгеретінін бақылаңыз[span_11](end_span).</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="instruction-card">
-        <h2 class="lab-name">Газдардың қасиеттері</h2>
-        <span class="class-badge">8-сынып</span>
-        
-        <div class="info-block goal">
-            <div class="block-title">🎯 Оқу мақсаты</div>
-            [span_12](start_span)<p>Газдардың көлемдік қатынас заңын қолдану және газдардың күйін зерттеу[span_12](end_span).</p>
-        </div>
-
-        <div class="info-block tasks">
-            <div class="block-title">📝 Тапсырмалар</div>
-            <ul>
-                [span_13](start_span)<li>Газдардың қысым мен температураға қалай тәуелді екенін түсіндіріңіз[span_13](end_span).</li>
-                [span_14](start_span)<li>Газдардың белгілі пішіні мен көлемі болмау себебін сипаттаңыз[span_14](end_span).</li>
-            </ul>
-        </div>
-
-        <div class="info-block warning">
-            <div class="block-title">⚠️ Қауіпсіздік ескертуі</div>
-            [span_15](start_span)<p>Жанғыш газдармен тәжірибе жасау кезінде от көзінен алыс болу қажет[span_15](end_span).</p>
-        </div>
-    </div>
-
-    <div class="instruction-card">
-        <h2 class="lab-name">Тотығу-тотықсыздану реакциялары</h2>
-        <span class="class-badge">9-сынып</span>
-        
-        <div class="info-block goal">
-            <div class="block-title">🎯 Оқу мақсаты</div>
-            [span_16](start_span)<p>Тотығу-тотықсыздану реакцияларын тотығу дәрежесінің өзгеруі ретінде түсіну[span_16](end_span).</p>
-        </div>
-
-        <div class="info-block tasks">
-            <div class="block-title">📝 Тапсырмалар</div>
-            <ul>
-                [span_17](start_span)<li>Zn + CuSO₄ → ZnSO₄ + Cu реакциясында қай зат тотықтырғыш, қайсысы тотықсыздандырғыш екенін анықтаңыз[span_17](end_span).</li>
-            </ul>
-        </div>
-    </div>
-
-    <a href="index.html" class="back-link">← Басты бетке қайту</a>
-</div>
-
 </body>
 </html>
