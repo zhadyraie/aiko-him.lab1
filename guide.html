@@ -3,36 +3,227 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Нұсқаулықтар</title>
+    <title>Нұсқаулықтар | Виртуалды Химия</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <style>
-        :root { --primary: #059669; --bg: #ecfdf5; }
-        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); padding: 20px; }
-        .container { max-width: 800px; margin: 0 auto; }
-        .inst-block { background: white; border-radius: 20px; padding: 30px; margin-bottom: 25px; border-top: 4px solid var(--primary); }
-        .badge { background: #d1fae5; color: #065f46; padding: 4px 12px; border-radius: 6px; font-weight: bold; }
-        h2 { color: #064e3b; margin-top: 15px; }
+        :root {
+            --bg-pastel: #fff5f7;
+            --primary-pink: #f48fb1;
+            --dark-pink: #ad1457;
+            --soft-white: #ffffff;
+            --text-main: #4a4a4a;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-pastel);
+            color: var(--text-main);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .container { width: 90%; max-width: 900px; margin: 0 auto; padding: 40px 0; }
+
+        .page-header {
+            text-align: center;
+            padding: 60px 0;
+            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
+            border-radius: 0 0 50px 50px;
+            margin-bottom: 40px;
+        }
+
+        .page-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: var(--dark-pink);
+            font-size: 2.2rem;
+            margin-top: 10px;
+        }
+
+        .instruction-card {
+            background: var(--soft-white);
+            border-radius: 30px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 25px rgba(173, 20, 87, 0.05);
+            border-left: 15px solid var(--primary-pink);
+        }
+
+        .class-badge {
+            background: var(--primary-pink);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: var(--dark-pink);
+            margin: 15px 0;
+        }
+
+        .objective {
+            background: #fff9fa;
+            padding: 15px;
+            border-radius: 15px;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            font-style: italic;
+            color: #7d4a5d;
+        }
+
+        .tasks-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .tasks-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+            font-size: 1rem;
+        }
+
+        .tasks-list li::before {
+            content: "🌸";
+            position: absolute;
+            left: 0;
+            font-size: 0.8rem;
+        }
+
+        .safety-box {
+            margin-top: 25px;
+            padding: 20px;
+            background: #fdf2f5;
+            border-radius: 20px;
+            border: 1px dashed var(--primary-pink);
+        }
+
+        .safety-box h4 {
+            color: var(--dark-pink);
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .back-btn {
+            display: block;
+            text-align: center;
+            margin-top: 50px;
+            color: var(--dark-pink);
+            text-decoration: none;
+            font-weight: bold;
+            font-style: italic;
+        }
     </style>
 </head>
 <body>
+
+    <header class="page-header">
+        <div class="container">
+            <span style="font-weight: bold; letter-spacing: 2px; color: var(--primary-pink);">2-БӨЛІМ</span>
+            <h1>Мұғалімдерге арналған нұсқаулық</h1>
+        </div>
+    </header>
+
     <div class="container">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
-            <h1>Әдістемелік нұсқау</h1>
-            <a href="index.html" style="text-decoration: none; color: #064e3b; font-weight: bold;">← Басты бет</a>
+
+        <div class="instruction-card">
+            <span class="class-badge">8-СЫНЫП</span>
+            <h2>Химиялық реакцияларды теңестіру</h2>
+            <div class="objective">
+                [span_2](start_span)<b>Оқу мақсаты:</b> 8.2.3.3 – реакцияға қатысатын және түзілетін заттардың формуласын жаза отырып, химиялық реакциялар теңдеулерін құру[span_2](end_span).
+            </div>
+            [span_3](start_span)<p><b>Сабақта қолдану кезеңі:</b> Түсіндіру[span_3](end_span).</p>
+            <ul class="tasks-list">
+                <li>Темір (Fe) мен күкірт (S) әрекеттесіп темір(II) сульфидін түзеді. [span_4](start_span)Реакция теңдеуін жазыңыз және теңестіріңіз[span_4](end_span).</li>
+                [span_5](start_span)<li>Кальций карбонаты (CaCO₃) қыздырғанда кальций оксиді (CaO) мен көмірқышқыл газы (CO₂) түзіледі[span_5](end_span).</li>
+                [span_6](start_span)<li>Мырыш (Zn) тұз қышқылымен (HCl) әрекеттескенде мырыш хлориді (ZnCl₂) мен сутек газы (H₂) түзіледі[span_6](end_span).</li>
+            </ul>
+            <div class="safety-box">
+                <h4>⚠️ Қауіпсіздік ескертулері</h4>
+                [span_7](start_span)<p>Химиялық заттарды дұрыс пайдалану: реагенттерді тек қажетті мөлшерде алу[span_7](end_span).</p>
+            </div>
         </div>
 
-        <div class="inst-block">
-            <span class="badge">8-СЫНЫП</span>
+        <div class="instruction-card">
+            <span class="class-badge">7-СЫНЫП</span>
+            <h2>рН шкаласы</h2>
+            <div class="objective">
+                [span_8](start_span)<b>Оқу мақсаты:</b> 7.3.4.3 – рН шкаласы негізінде әмбебап индикаторды қолданып, сілтілер мен қышқылдарды анықтай алу[span_8](end_span).
+            </div>
+            [span_9](start_span)<p><b>Сабақта қолдану кезеңі:</b> Түсіндіру[span_9](end_span).</p>
+            <ul class="tasks-list">
+                [span_10](start_span)<li>Әмбебап индикатор көмегімен ерітіндінің рН мәнін қалай анықтауға болады?[span_10](end_span)</li>
+                [span_11](start_span)<li>Лимон шырыны, сода ерітіндісі және таза судың рН мәнін анықтаңыз[span_11](end_span).</li>
+                [span_12](start_span)<li>pH мәні жетіден төмен болатын ерітіндіге қандай сипат беріледі?[span_12](end_span)</li>
+            </ul>
+            <div class="safety-box">
+                <h4>⚠️ Қауіпсіздік ескертулері</h4>
+                [span_13](start_span)<p>Қышқылдар мен сілтілерді ешқашан дәмін татпау немесе иісін тікелей сезбеу[span_13](end_span).</p>
+            </div>
+        </div>
+
+        <div class="instruction-card">
+            <span class="class-badge">8-СЫНЫП</span>
+            <h2>Ерітінділер және концентрация</h2>
+            <div class="objective">
+                [span_14](start_span)<b>Оқу мақсаты:</b> 8.3.4.6 – ерітіндідегі заттың молярлық концентрациясын есептеу[span_14](end_span).
+            </div>
+            [span_15](start_span)<p><b>Сабақта қолдану кезеңі:</b> Түсіндіру[span_15](end_span).</p>
+            <ul class="tasks-list">
+                [span_16](start_span)<li>Ерітінді дегеніміз не және оның компоненттері қалай аталады?[span_16](end_span)</li>
+                [span_17](start_span)<li>Ерітінді концентрациясын массалық үлес немесе молярлық концентрация бойынша түсіндіріңіз[span_17](end_span).</li>
+                [span_18](start_span)<li>Концентрацияны есептеу жолдарын түсіндіріңіз[span_18](end_span).</li>
+            </ul>
+            <div class="safety-box">
+                <h4>⚠️ Қауіпсіздік ескертулері</h4>
+                [span_19](start_span)<p>Тұз ерітінділерін иісін тікелей сезбей қолдану[span_19](end_span).</p>
+            </div>
+        </div>
+
+        <div class="instruction-card">
+            <span class="class-badge">8-СЫНЫП</span>
             <h2>Газдардың қасиеттері</h2>
-            <p><strong>Оқу мақсаты:</strong> Газдардың көлемдік қатынас заңын қолдануды үйрету.</p>
-            <p><strong>Тапсырма:</strong> Газдардың қысым мен температураға қалай тәуелді екенін түсіндіріңіз.</p>
+            <div class="objective">
+                [span_20](start_span)<b>Оқу мақсаты:</b> 8.2.3.8 – газдардың қатысуымен жүретін реакциялар бойынша есептер шығару[span_20](end_span).
+            </div>
+            [span_21](start_span)<p><b>Сабақта қолдану кезеңі:</b> Түсіндіру[span_21](end_span).</p>
+            <ul class="tasks-list">
+                [span_22](start_span)<li>Газдардың белгілі көлемі мен пішіні жоқ екенін қалай түсіндіруге болады?[span_22](end_span)</li>
+                [span_23](start_span)<li>Газдардың қысым мен температураға тәуелділігін түсіндіріңіз[span_23](end_span).</li>
+                [span_24](start_span)<li>Газдардың химиялық қасиеттеріне мысал келтіріңіз[span_24](end_span).</li>
+            </ul>
+            <div class="safety-box">
+                <h4>⚠️ Қауіпсіздік ескертулері</h4>
+                [span_25](start_span)<p>Жанғыш газдармен тәжірибе жасау кезінде от көзінен алыс болу[span_25](end_span).</p>
+            </div>
         </div>
 
-        <div class="inst-block">
-            <span class="badge">9-СЫНЫП</span>
+        <div class="instruction-card">
+            <span class="class-badge">9-СЫНЫП</span>
             <h2>Тотығу-тотықсыздану реакциялары</h2>
-            <p><strong>Оқу мақсаты:</strong> Тотығу дәрежесі өзгере жүретін реакцияларды түсіну.</p>
-            <p><strong>Тапсырма:</strong> Zn + CuSO₄ → ZnSO₄ + Cu реакциясындағы тотықтырғышты анықтаңыз.</p>
+            <div class="objective">
+                [span_26](start_span)<b>Оқу мақсаты:</b> 9.2.2.5 – тотығу-тотықсыздану реакцияларын тотығу дәрежесі өзгере жүретін реакциялар ретінде түсіну[span_26](end_span).
+            </div>
+            [span_27](start_span)<p><b>Сабақта қолдану кезеңі:</b> Бекіту[span_27](end_span).</p>
+            <ul class="tasks-list">
+                [span_28](start_span)<li>Берілген реакцияда қай зат тотығады: Zn + CuSO₄ → ZnSO₄ + Cu?[span_28](end_span)</li>
+                <li>Тотығу дәрежесі ТТР-да қалай өзгереді? [span_29](start_span)Мысал келтіріңіз[span_29](end_span).</li>
+                [span_30](start_span)<li>Жану реакцияларын ТТР тұрғысынан түсіндіріңіз: 2Mg + O₂ → 2MgO[span_30](end_span).</li>
+            </ul>
+            <div class="safety-box">
+                <h4>⚠️ Қауіпсіздік ескертулері</h4>
+                [span_31](start_span)<p>Реактивтерді ешқашан дәмін татпау немесе иісін тікелей сезбеу[span_31](end_span).</p>
+            </div>
         </div>
+
+        <a href="index.html" class="back-btn">← Басты бетке қайту</a>
     </div>
+
 </body>
 </html>
