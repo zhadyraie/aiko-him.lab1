@@ -226,3 +226,23 @@ h1 span {
     border: 2px solid #f48fb1;
     transition: 0.3s;
 }
+.btn-feedback {
+    display: inline-block;
+    background-color: #f48fb1; /* Пастельді қызғылт */
+    color: white;
+    padding: 15px 40px;
+    border-radius: 50px; /* Сопақша пішін */
+    text-decoration: none;
+    font-weight: bold;
+    font-style: italic; /* Курсив мәтін */
+    box-shadow: 0 4px 15px rgba(244, 143, 177, 0.3);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.btn-feedback:hover {
+    background-color: white;
+    color: #ad1457;
+    border: 2px solid #f48fb1;
+    transform: translateY(-3px); /* Тышқанды апарғанда аздап көтеріледі */
+}
