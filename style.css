@@ -1,88 +1,87 @@
 body {
     margin:0;
     font-family: Arial;
-    background: linear-gradient(135deg,#667eea,#764ba2);
-    color:white;
+    background:#f5f6fa;
+}
+
+/* HEADER */
+.header {
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:15px;
+    background:white;
+}
+
+.logo {
+    font-size:30px;
 }
 
 /* HERO */
 .hero {
-    background:url("https://source.unsplash.com/1600x900/?chemistry,lab") center/cover;
-    height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    padding:40px;
-    backdrop-filter: blur(5px);
+    background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    color:white;
+    padding:40px 20px;
 }
 
-.top {
-    display:flex;
-    justify-content:space-between;
-}
-
-.desc {
-    max-width:500px;
-    margin:20px 0;
-}
-
-.nav a {
+.badge {
     display:inline-block;
-    margin:10px;
-    padding:10px 15px;
-    background:white;
-    color:black;
-    text-decoration:none;
-    border-radius:10px;
+    background:rgba(255,255,255,0.2);
+    padding:8px 12px;
+    border-radius:20px;
+    margin-bottom:20px;
 }
 
-/* GRID */
-.grid {
-    display:grid;
-    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
-    gap:20px;
+.hero h1 {
+    font-size:28px;
+}
+
+.hero span {
+    color:#4da3ff;
+}
+
+.hero p {
+    opacity:0.8;
+}
+
+.btn {
+    display:inline-block;
+    margin-top:20px;
+    background:#3b82f6;
+    color:white;
+    padding:15px 20px;
+    border-radius:12px;
+    text-decoration:none;
+}
+
+/* ABOUT */
+.about {
     padding:20px;
 }
 
-/* CARD */
-.card {
+.author {
     background:white;
-    color:black;
-    border-radius:15px;
-    overflow:hidden;
-    transition:0.3s;
-}
-
-.card img {
-    width:100%;
-}
-
-.card:hover {
-    transform:translateY(-10px) scale(1.05);
-}
-
-.card a {
-    display:block;
-    text-align:right;
-    padding:10px;
-}
-
-/* BUTTON */
-.btn {
-    background:white;
-    color:black;
-    padding:10px 15px;
-    border-radius:10px;
-    text-decoration:none;
-}
-
-.title {
-    text-align:center;
+    padding:20px;
+    border-radius:20px;
     margin-top:20px;
 }
 
-.back {
+.icon {
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+/* LINKS */
+.links {
+    padding:20px;
+}
+
+.links a {
     display:block;
-    text-align:center;
-    margin:20px;
+    margin:10px 0;
+}
+
+/* FEEDBACK */
+.feedback {
+    padding:20px;
 }
