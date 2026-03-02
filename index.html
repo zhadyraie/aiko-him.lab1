@@ -3,72 +3,280 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Виртуалды Химия Зертханасы</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Виртуалды зертхана | Айғаным Бақытжанқызы</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <style>
+        /* ПАСТЕЛЬДІ-ҚЫЗҒЫЛТ ПАЛИТРА */
+        :root {
+            --bg-pastel: #fff5f7;      /* Жұмсақ қызғылт фон */
+            --primary-pink: #f48fb1;   /* Негізгі пастельді қызғылт */
+            --dark-pink: #ad1457;      /* Қанық қызғылт (мәтін үшін) */
+            --soft-white: #ffffff;
+            --accent-gold: #d4af37;    /* Алтын түстес акцент */
+            --text-main: #4a4a4a;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-pastel);
+            color: var(--text-main);
+            line-height: 1.8;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* HEADER */
+        .header {
+            padding: 25px 0;
+            background: var(--soft-white);
+            box-shadow: 0 4px 15px rgba(244, 143, 177, 0.15);
+            border-bottom: 2px solid var(--primary-pink);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-box {
+            background: var(--primary-pink);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.8rem;
+            color: white;
+        }
+
+        .header-text h2 { 
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem; 
+            color: var(--dark-pink);
+            font-style: italic;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
+            text-align: center;
+            border-radius: 0 0 80px 80px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--soft-white);
+            color: var(--dark-pink);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            border: 1px solid var(--primary-pink);
+            font-style: italic;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 4vw, 3rem);
+            color: var(--dark-pink);
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+
+        .hero p {
+            max-width: 750px;
+            margin: 0 auto 40px;
+            font-size: 1.1rem;
+            color: #6d4c41;
+            font-style: italic; /* Мәтін курсивпен */
+        }
+
+        /* BUTTONS */
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn-main {
+            background: var(--dark-pink);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.4s;
+            box-shadow: 0 8px 15px rgba(173, 20, 87, 0.2);
+        }
+
+        .btn-secondary {
+            background: var(--soft-white);
+            color: var(--dark-pink);
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid var(--primary-pink);
+            transition: 0.4s;
+        }
+
+        .btn-main:hover, .btn-secondary:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+
+        /* ABOUT SECTION */
+        .about {
+            padding: 80px 0;
+        }
+
+        .card {
+            background: var(--soft-white);
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid #fce4ec;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--dark-pink);
+            margin-bottom: 30px;
+            font-style: italic;
+            text-align: center;
+        }
+
+        /* AUTHOR CARD */
+        .author-card {
+            background: linear-gradient(to right, #fff, #fce4ec);
+            border-radius: 25px;
+            padding: 40px;
+            margin-top: 50px;
+            border-left: 10px solid var(--primary-pink);
+            text-align: center;
+        }
+
+        .author-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--dark-pink);
+            margin: 10px 0;
+            font-style: italic;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: #4a148c; /* Қою күлгін - қызғылтпен контраст */
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            border-radius: 60px 60px 0 0;
+        }
+
+        .feedback-btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 18px 40px;
+            background: var(--primary-pink);
+            color: white;
+            text-decoration: none;
+            border-radius: 15px;
+            font-weight: 700;
+            font-style: italic;
+            transition: 0.3s;
+        }
+
+        .feedback-btn:hover {
+            background: var(--dark-pink);
+        }
+
+        @media (max-width: 600px) {
+            .hero-btns { flex-direction: column; }
+            .btn-main, .btn-secondary { width: 100%; text-align: center; }
+        }
+    </style>
 </head>
 <body>
 
-<header class="header">
-    <div class="container flex-header">
-        <div class="logo-area">
-            <span class="logo-icon">🧪</span>
-            <div class="logo-text">
-                <h2>ВИРТУАЛДЫ</h2>
-                <span>ЗЕРТХАНА</span>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-box">🌸</div>
+                <div class="header-text">
+                    <h2>ВИРТУАЛДЫ ЗЕРТХАНА</h2>
+                </div>
             </div>
         </div>
-    </div>
-</header>
+    </header>
 
-<section class="hero">
-    <div class="container">
-        <div class="badge">✨ АВТОРЛЫҚ ЖОБА</div>
-        <h1>Химия пәні мұғалімдеріне арналған <br><span>виртуалды зертхана</span></h1>
-        [span_0](start_span)<p>Білім беру үдерісін цифрландыру жағдайында химия пәнін оқытудың тиімділігін арттыруға бағытталған инновациялық білім беру ресурсы[span_0](end_span).</p>
-        <div class="hero-btns">
-            <a href="labs.html" class="btn btn-primary">Зертханаларды ашу →</a>
-        </div>
-    </div>
-</section>
-
-<section class="description">
-    <div class="container">
-        <h2 class="section-title">Қысқаша сипаттама</h2>
-        <div class="card">
-            <p>«Химия мұғалімдеріне арналған виртуалды зертхана сайты» – химия мұғалімдерінің кәсіби қызметін әдістемелік және цифрлық тұрғыдан қолдауға арналған кешенді электрондық орта.</p>
-            <p>Сайт мазмұнына интерактивті зертханалық жұмыстар, виртуалды тәжірибелердің 3D модельдері және қауіпсіздік техникасы бойынша нұсқаулықтар енгізілген.</p>
-        </div>
-    </div>
-</section>
-
-<section class="author">
-    <div class="container">
-        <div class="author-card">
-            <div class="author-icon">👩‍енг</div>
-            <div class="author-info">
-                <span class="label">АВТОР ТУРАЛЫ</span>
-                <h3>Рақымжанова Айғаным Бақытжанқызы</h3>
-                [span_1](start_span)<p>Цифрлық ресурстарды әзірлеуші және жоба авторы[span_1](end_span).</p>
+    <section class="hero">
+        <div class="container">
+            <div class="badge">✨ АВТОРЛЫҚ ЖОБА</div>
+            <h1>«Химия пәні мұғалімдеріне арналған <span>виртуалды зертхана</span>»</h1>
+            <p>
+                Виртуалды зертхананың мақсаты – оқу процесін тиімді ұйымдастыруға, сабақ сапасын 
+                арттыруға және тәжірибелік жұмыстарды заманауи технологиялар арқылы өткізуге 
+                [span_1](start_span)мүмкіндік беру[span_1](end_span).
+            </p>
+            
+            <div class="hero-btns">
+                <a href="labs.html" class="btn-main">Зертханаларды ашу &nbsp; 🧪</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdao5ybHeBxNue6o_8O8LIFhLciQO0ARnVjFMlSSWI6SnOzFQ/viewform" class="btn-secondary">Кері байланыс &nbsp; 💌</a>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<footer class="footer">
-    <div class="container">
-        <div class="feedback-area">
-            <h3>ЖОБАНЫ БАҒАЛАҢЫЗ</h3>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdao5ybHeBxNue6o_8O8LIFhLciQO0ARnVjFMlSSWI6SnOzFQ/viewform" class="btn btn-feedback">
-                [span_2](start_span)⭐ Кері байланыс және бағалау[span_2](end_span)
+    <section class="about">
+        <div class="container">
+            <div class="card">
+                <div class="section-title">Қысқаша сипаттама</div>
+                <p style="font-style: italic; text-align: center; margin-bottom: 20px;">
+                    «Химия мұғалімдеріне арналған виртуалды зертхана сайты» – химия мұғалімдерінің кәсіби қызметін 
+                    [span_2](start_span)[span_3](start_span)әдістемелік және цифрлық тұрғыдан қолдауға арналған кешенді электрондық орта[span_2](end_span)[span_3](end_span).
+                </p>
+                <p style="font-style: italic; text-align: center;">
+                    Сайт мазмұнына интерактивті зертханалық жұмыстар, виртуалды тәжірибелердің 3D модельдері, 
+                    [span_4](start_span)[span_5](start_span)қауіпсіздік техникасы бойынша нұсқаулықтар енгізілген[span_4](end_span)[span_5](end_span).
+                </p>
+
+                <div class="author-card">
+                    <span style="color: var(--primary-pink); font-weight: bold; font-size: 0.9rem;">ЖОБА АВТОРЫ</span>
+                    <h2 class="author-name">Рақымжанова Айғаным Бақытжанқызы</h2>
+                    [span_6](start_span)<p style="font-style: italic; color: #880e4f;">Цифрлық ресурстарды әзірлеуші және жоба авторы[span_6](end_span).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <h3 style="font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.8rem; margin-bottom: 10px;">Жобаны бағалаңыз</h3>
+            <p style="opacity: 0.8; font-style: italic;">Сіздің пікіріңіз біз үшін өте маңызды</p>
+            
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdao5ybHeBxNue6o_8O8LIFhLciQO0ARnVjFMlSSWI6SnOzFQ/viewform" 
+               class="feedback-btn" target="_blank">
+                ⭐ Кері байланыс және бағалау
             </a>
+
+            <div style="margin-top: 50px; font-size: 0.85rem; opacity: 0.6; letter-spacing: 2px;">
+                [span_7](start_span)© 2026 БАРЛЫҚ ҚҰҚЫҚТАР ҚОРҒАЛҒАН[span_7](end_span).
+            </div>
         </div>
-        <div class="footer-bottom">
-            <p>© 2026 БАРЛЫҚ ҚҰҚЫҚТАР ҚОРҒАЛҒАН.</p>
-           
-        </div>
-    </div>
-</footer>
+    </footer>
 
 </body>
 </html>
