@@ -1,44 +1,193 @@
 <!DOCTYPE html>
 <html lang="kk">
 <head>
-<meta charset="UTF-8">
-<title>Нұсқаулық</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мұғалімдерге нұсқаулық</title>
+    <style>
+        :root {
+            --bg-light: #f8fafc;
+            --text-dark: #1e293b;
+            --accent-blue: #2563eb;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* HEADER */
+        .title-section {
+            padding: 40px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .title-section h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        .btn-method {
+            background: var(--accent-blue);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        /* MAIN INSTRUCTION CARD */
+        .instruction-card {
+            background: white;
+            border-radius: 40px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+        }
+
+        .lab-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .class-badge {
+            display: inline-block;
+            background: #1e293b;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 25px;
+        }
+
+        /* SUB-BLOCKS (Суреттегідей стиль) */
+        .info-block {
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-left: 5px solid;
+            position: relative;
+        }
+
+        .block-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.8rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        /* Мақсаты - Көк түс */
+        .goal {
+            background: #f0f7ff;
+            border-left-color: #3b82f6;
+        }
+        .goal .block-title { color: #3b82f6; }
+
+        /* Әдістеме - Сары түс */
+        .method {
+            background: #fffdf0;
+            border-left-color: #f59e0b;
+        }
+        .method .block-title { color: #f59e0b; }
+
+        /* Нәтиже - Қою көк түс */
+        .result {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-left-color: #1e3a8a;
+        }
+        .result .block-title { color: #1e3a8a; }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin: 40px 0;
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
 
-<h1 class="title">👩‍🏫 Нұсқаулық</h1>
+<div class="container">
+    <div class="title-section">
+        <h1>Мұғалімдерге<br>нұсқаулық</h1>
+        <a href="#" class="btn-method">Әдістемелік көмек</a>
+    </div>
 
-<div class="grid">
+    <div class="instruction-card">
+        <h2 class="lab-name">Химиялық реакцияларды теңестіру</h2>
+        <span class="class-badge">8-сынып</span>
 
-<div class="card">
-<h3>8 сынып</h3>
-<p>Реакция теңестіру</p>
+        <div class="info-block goal">
+            <div class="block-title">🎯 Мақсаты</div>
+            <p>Масса сақталу заңы негізінде химиялық реакцияларды теңестіруді үйрену.</p>
+        </div>
+
+        <div class="info-block method">
+            <div class="block-title">📜 Әдістеме</div>
+            <p>Виртуалды симуляцияны қолданып, мәндерді өзгерту.</p>
+        </div>
+    </div>
+
+    <div class="instruction-card">
+        <h2 class="lab-name">Ерітінділер концентрациясы</h2>
+        <span class="class-badge">9-сынып</span>
+
+        <div class="info-block goal">
+            <div class="block-title">🎯 Мақсаты</div>
+            <p>Еріген зат пен еріткіштің қатынасын зерттеу.</p>
+        </div>
+
+        <div class="info-block method">
+            <div class="block-title">📜 Әдістеме</div>
+            <p>Виртуалды симуляцияны қолданып, мәндерді өзгерту.</p>
+        </div>
+
+        <div class="info-block result">
+            <div class="block-title">📊 Нәтиже</div>
+            <p>Тәжірибе соңында қорытынды жасау.</p>
+        </div>
+    </div>
+
+    <div class="instruction-card">
+        <h2 class="lab-name">pH шкаласы және индикаторлар</h2>
+        <span class="class-badge">8-9 сынып</span>
+
+        <div class="info-block goal">
+            <div class="block-title">🎯 Мақсаты</div>
+            <p>Түрлі ерітінділердің қышқылдығын анықтау.</p>
+        </div>
+
+        <div class="info-block method">
+            <div class="block-title">📜 Әдістеме</div>
+            <p>Түрлі заттарды қосу арқылы индикатор түсінің өзгеруін бақылау.</p>
+        </div>
+    </div>
+
+    <a href="index.html" class="back-link">← Басты бетке қайту</a>
 </div>
-
-<div class="card">
-<h3>7 сынып</h3>
-<p>pH шкаласы</p>
-</div>
-
-<div class="card">
-<h3>8 сынып</h3>
-<p>Ерітінділер</p>
-</div>
-
-<div class="card">
-<h3>8 сынып</h3>
-<p>Газдар</p>
-</div>
-
-<div class="card">
-<h3>9 сынып</h3>
-<p>ТТР</p>
-</div>
-
-</div>
-
-<a class="back" href="index.html">← Басты бет</a>
 
 </body>
 </html>
