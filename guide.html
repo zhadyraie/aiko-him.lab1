@@ -3,118 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Нұсқаулықтар | Виртуалды Химия</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <title>Нұсқаулықтар | Айғаным Бақытжанқызы</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,400&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
     <style>
+        /* ПАСТЕЛЬДІ ТҮСТЕР */
         :root {
-            --bg-pastel: #fff5f7;
-            --primary-pink: #f48fb1;
-            --dark-pink: #ad1457;
-            --soft-white: #ffffff;
-            --text-main: #4a4a4a;
+            --bg: #fffafb;
+            --pink-light: #ffdde5;
+            --pink-main: #f06292;
+            --text: #4e342e;
         }
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: var(--bg-pastel);
-            color: var(--text-main);
+            background-color: var(--bg);
+            color: var(--text);
             margin: 0;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
-        .container { width: 90%; max-width: 900px; margin: 0 auto; padding: 40px 0; }
+        .container { width: 90%; max-width: 850px; margin: 0 auto; padding: 20px; }
 
-        .page-header {
+        header {
             text-align: center;
-            padding: 60px 0;
-            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
-            border-radius: 0 0 50px 50px;
-            margin-bottom: 40px;
+            padding: 40px 20px;
+            background: white;
+            border-bottom: 4px solid var(--pink-light);
+            border-radius: 0 0 40px 40px;
+            margin-bottom: 30px;
         }
 
-        .page-header h1 {
+        h1 {
             font-family: 'Playfair Display', serif;
             font-style: italic;
-            color: var(--dark-pink);
+            color: var(--pink-main);
             font-size: 2.2rem;
-            margin-top: 10px;
+            margin: 0;
         }
 
-        .instruction-card {
-            background: var(--soft-white);
-            border-radius: 30px;
-            padding: 40px;
+        .card {
+            background: white;
+            border-radius: 25px;
+            padding: 30px;
             margin-bottom: 30px;
-            box-shadow: 0 10px 25px rgba(173, 20, 87, 0.05);
-            border-left: 15px solid var(--primary-pink);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            border-left: 8px solid var(--pink-main);
         }
 
-        .class-badge {
-            background: var(--primary-pink);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
+        .class-label {
             font-weight: bold;
+            color: var(--pink-main);
+            font-size: 0.9rem;
+            text-transform: uppercase;
         }
 
         h2 {
             font-family: 'Playfair Display', serif;
             font-style: italic;
-            color: var(--dark-pink);
-            margin: 15px 0;
+            margin: 10px 0;
+            font-size: 1.6rem;
         }
 
-        .objective {
-            background: #fff9fa;
+        .info-block {
+            background: #fff5f7;
             padding: 15px;
             border-radius: 15px;
-            font-size: 0.95rem;
-            margin-bottom: 20px;
+            margin: 15px 0;
             font-style: italic;
-            color: #7d4a5d;
         }
 
-        .tasks-list {
-            list-style: none;
-            padding: 0;
+        ul { padding-left: 20px; }
+        ul li { margin-bottom: 10px; font-style: italic; }
+
+        .safety {
+            background: #fff0f3;
+            padding: 15px;
+            border-radius: 15px;
+            border: 1px dashed var(--pink-main);
+            margin-top: 15px;
         }
 
-        .tasks-list li {
-            position: relative;
-            padding-left: 25px;
-            margin-bottom: 12px;
-            font-size: 1rem;
-        }
-
-        .tasks-list li::before {
-            content: "🌸";
-            position: absolute;
-            left: 0;
-            font-size: 0.8rem;
-        }
-
-        .safety-box {
-            margin-top: 25px;
-            padding: 20px;
-            background: #fdf2f5;
-            border-radius: 20px;
-            border: 1px dashed var(--primary-pink);
-        }
-
-        .safety-box h4 {
-            color: var(--dark-pink);
-            margin-top: 0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .back-btn {
+        .btn-back {
             display: block;
             text-align: center;
-            margin-top: 50px;
-            color: var(--dark-pink);
+            margin-top: 20px;
+            color: var(--pink-main);
             text-decoration: none;
             font-weight: bold;
             font-style: italic;
@@ -123,107 +96,93 @@
 </head>
 <body>
 
-    <header class="page-header">
-        <div class="container">
-            <span style="font-weight: bold; letter-spacing: 2px; color: var(--primary-pink);">2-БӨЛІМ</span>
-            <h1>Мұғалімдерге арналған нұсқаулық</h1>
+<header>
+    <h1>Мұғалімдерге арналған нұсқаулық</h1>
+</header>
+
+<div class="container">
+
+    <div class="card">
+        <span class="class-label">8-СЫНЫП</span>
+        <h2>Химиялық реакцияларды теңестіру</h2>
+        <div class="info-block">
+            Оқу мақсаты: 8.2.3.3 – реакцияға қатысатын және түзілетін заттардың формуласын жаза отырып, химиялық реакциялар теңдеулерін құру.
         </div>
-    </header>
-
-    <div class="container">
-
-        <div class="instruction-card">
-            <span class="class-badge">8-СЫНЫП</span>
-            <h2>Химиялық реакцияларды теңестіру</h2>
-            <div class="objective">
-                [span_2](start_span)<b>Оқу мақсаты:</b> 8.2.3.3 – реакцияға қатысатын және түзілетін заттардың формуласын жаза отырып, химиялық реакциялар теңдеулерін құру[span_2](end_span).
-            </div>
-            [span_3](start_span)<p><b>Сабақта қолдану кезеңі:</b> Түсіндіру[span_3](end_span).</p>
-            <ul class="tasks-list">
-                <li>Темір (Fe) мен күкірт (S) әрекеттесіп темір(II) сульфидін түзеді. [span_4](start_span)Реакция теңдеуін жазыңыз және теңестіріңіз[span_4](end_span).</li>
-                [span_5](start_span)<li>Кальций карбонаты (CaCO₃) қыздырғанда кальций оксиді (CaO) мен көмірқышқыл газы (CO₂) түзіледі[span_5](end_span).</li>
-                [span_6](start_span)<li>Мырыш (Zn) тұз қышқылымен (HCl) әрекеттескенде мырыш хлориді (ZnCl₂) мен сутек газы (H₂) түзіледі[span_6](end_span).</li>
-            </ul>
-            <div class="safety-box">
-                <h4>⚠️ Қауіпсіздік ескертулері</h4>
-                [span_7](start_span)<p>Химиялық заттарды дұрыс пайдалану: реагенттерді тек қажетті мөлшерде алу[span_7](end_span).</p>
-            </div>
+        <p><b>Сабақта қолдану:</b> <i>Түсіндіру кезеңі</i></p>
+        <ul>
+            <li>Темір мен күкірт әрекеттесіп темір(II) сульфидін түзеді. Теңдеуді құрыңыз.</li>
+            <li>Кальций карбонатының ыдырау реакциясын теңестіріңіз.</li>
+            <li>Мырыш пен тұз қышқылының әрекеттесуін виртуалды түрде тексеріңіз.</li>
+        </ul>
+        <div class="safety">
+            <b>⚠️ Қауіпсіздік:</b> <i>Реагенттерді тек қажетті мөлшерде алуды қадағалаңыз.</i>
         </div>
-
-        <div class="instruction-card">
-            <span class="class-badge">7-СЫНЫП</span>
-            <h2>рН шкаласы</h2>
-            <div class="objective">
-                [span_8](start_span)<b>Оқу мақсаты:</b> 7.3.4.3 – рН шкаласы негізінде әмбебап индикаторды қолданып, сілтілер мен қышқылдарды анықтай алу[span_8](end_span).
-            </div>
-            [span_9](start_span)<p><b>Сабақта қолдану кезеңі:</b> Түсіндіру[span_9](end_span).</p>
-            <ul class="tasks-list">
-                [span_10](start_span)<li>Әмбебап индикатор көмегімен ерітіндінің рН мәнін қалай анықтауға болады?[span_10](end_span)</li>
-                [span_11](start_span)<li>Лимон шырыны, сода ерітіндісі және таза судың рН мәнін анықтаңыз[span_11](end_span).</li>
-                [span_12](start_span)<li>pH мәні жетіден төмен болатын ерітіндіге қандай сипат беріледі?[span_12](end_span)</li>
-            </ul>
-            <div class="safety-box">
-                <h4>⚠️ Қауіпсіздік ескертулері</h4>
-                [span_13](start_span)<p>Қышқылдар мен сілтілерді ешқашан дәмін татпау немесе иісін тікелей сезбеу[span_13](end_span).</p>
-            </div>
-        </div>
-
-        <div class="instruction-card">
-            <span class="class-badge">8-СЫНЫП</span>
-            <h2>Ерітінділер және концентрация</h2>
-            <div class="objective">
-                [span_14](start_span)<b>Оқу мақсаты:</b> 8.3.4.6 – ерітіндідегі заттың молярлық концентрациясын есептеу[span_14](end_span).
-            </div>
-            [span_15](start_span)<p><b>Сабақта қолдану кезеңі:</b> Түсіндіру[span_15](end_span).</p>
-            <ul class="tasks-list">
-                [span_16](start_span)<li>Ерітінді дегеніміз не және оның компоненттері қалай аталады?[span_16](end_span)</li>
-                [span_17](start_span)<li>Ерітінді концентрациясын массалық үлес немесе молярлық концентрация бойынша түсіндіріңіз[span_17](end_span).</li>
-                [span_18](start_span)<li>Концентрацияны есептеу жолдарын түсіндіріңіз[span_18](end_span).</li>
-            </ul>
-            <div class="safety-box">
-                <h4>⚠️ Қауіпсіздік ескертулері</h4>
-                [span_19](start_span)<p>Тұз ерітінділерін иісін тікелей сезбей қолдану[span_19](end_span).</p>
-            </div>
-        </div>
-
-        <div class="instruction-card">
-            <span class="class-badge">8-СЫНЫП</span>
-            <h2>Газдардың қасиеттері</h2>
-            <div class="objective">
-                [span_20](start_span)<b>Оқу мақсаты:</b> 8.2.3.8 – газдардың қатысуымен жүретін реакциялар бойынша есептер шығару[span_20](end_span).
-            </div>
-            [span_21](start_span)<p><b>Сабақта қолдану кезеңі:</b> Түсіндіру[span_21](end_span).</p>
-            <ul class="tasks-list">
-                [span_22](start_span)<li>Газдардың белгілі көлемі мен пішіні жоқ екенін қалай түсіндіруге болады?[span_22](end_span)</li>
-                [span_23](start_span)<li>Газдардың қысым мен температураға тәуелділігін түсіндіріңіз[span_23](end_span).</li>
-                [span_24](start_span)<li>Газдардың химиялық қасиеттеріне мысал келтіріңіз[span_24](end_span).</li>
-            </ul>
-            <div class="safety-box">
-                <h4>⚠️ Қауіпсіздік ескертулері</h4>
-                [span_25](start_span)<p>Жанғыш газдармен тәжірибе жасау кезінде от көзінен алыс болу[span_25](end_span).</p>
-            </div>
-        </div>
-
-        <div class="instruction-card">
-            <span class="class-badge">9-СЫНЫП</span>
-            <h2>Тотығу-тотықсыздану реакциялары</h2>
-            <div class="objective">
-                [span_26](start_span)<b>Оқу мақсаты:</b> 9.2.2.5 – тотығу-тотықсыздану реакцияларын тотығу дәрежесі өзгере жүретін реакциялар ретінде түсіну[span_26](end_span).
-            </div>
-            [span_27](start_span)<p><b>Сабақта қолдану кезеңі:</b> Бекіту[span_27](end_span).</p>
-            <ul class="tasks-list">
-                [span_28](start_span)<li>Берілген реакцияда қай зат тотығады: Zn + CuSO₄ → ZnSO₄ + Cu?[span_28](end_span)</li>
-                <li>Тотығу дәрежесі ТТР-да қалай өзгереді? [span_29](start_span)Мысал келтіріңіз[span_29](end_span).</li>
-                [span_30](start_span)<li>Жану реакцияларын ТТР тұрғысынан түсіндіріңіз: 2Mg + O₂ → 2MgO[span_30](end_span).</li>
-            </ul>
-            <div class="safety-box">
-                <h4>⚠️ Қауіпсіздік ескертулері</h4>
-                [span_31](start_span)<p>Реактивтерді ешқашан дәмін татпау немесе иісін тікелей сезбеу[span_31](end_span).</p>
-            </div>
-        </div>
-
-        <a href="index.html" class="back-btn">← Басты бетке қайту</a>
     </div>
+
+    <div class="card">
+        <span class="class-label">7-СЫНЫП</span>
+        <h2>рН шкаласы және индикаторлар</h2>
+        <div class="info-block">
+            Оқу мақсаты: 7.3.4.3 – рН шкаласы негізінде әмбебап индикаторды қолданып, сілтілер мен қышқылдарды анықтау.
+        </div>
+        <p><b>Сабақта қолдану:</b> <i>Түсіндіру кезеңі</i></p>
+        <ul>
+            <li>Индикатор түсінің өзгеруі арқылы рН мәнін анықтауды үйрену.</li>
+            <li>Түрлі тұрмыстық заттардың қышқылдығын виртуалды шкалада салыстыру.</li>
+        </ul>
+        <div class="safety">
+            <b>⚠️ Қауіпсіздік:</b> <i>Қышқылдарды ешқашан дәмін татып көрмеу керек!</i>
+        </div>
+    </div>
+
+    <div class="card">
+        <span class="class-label">8-СЫНЫП</span>
+        <h2>Ерітінділер және концентрация</h2>
+        <div class="info-block">
+            Оқу мақсаты: 8.3.4.6 – ерітіндідегі заттың молярлық концентрациясын есептеу.
+        </div>
+        <ul class="tasks">
+            <li>Ерітінді концентрациясының өзгеруін виртуалды модельде бақылау.</li>
+            <li>Молярлық концентрацияны есептеуге арналған тапсырмаларды орындау.</li>
+        </ul>
+        <div class="safety">
+            <b>⚠️ Қауіпсіздік:</b> <i>Ерітінділермен жұмыс кезінде иісін тікелей иіскемеу.</i>
+        </div>
+    </div>
+
+    <div class="card">
+        <span class="class-label">8-СЫНЫП</span>
+        <h2>Газдардың қасиеттері</h2>
+        <div class="info-block">
+            Оқу мақсаты: 8.2.3.8 – газдардың қатысуымен жүретін реакциялар бойынша есептер шығару.
+        </div>
+        <ul>
+            <li>Газ молекулаларының қозғалысын және қысымның әсерін зерттеу.</li>
+            <li>Температура өзгергенде газ көлемінің қалай өзгеретінін бақылау.</li>
+        </ul>
+        <div class="safety">
+            <b>⚠️ Қауіпсіздік:</b> <i>Жанғыш газдармен жұмыс істегенде от көзінен алыс болу.</i>
+        </div>
+    </div>
+
+    <div class="card">
+        <span class="class-label">9-СЫНЫП</span>
+        <h2>Тотығу-тотықсыздану реакциялары</h2>
+        <div class="info-block">
+            Оқу мақсаты: 9.2.2.5 – тотығу-тотықсыздану реакцияларын тотығу дәрежесі өзгере жүретін реакциялар ретінде түсіну.
+        </div>
+        <p><b>Сабақта қолдану:</b> <i>Бекіту кезеңі</i></p>
+        <ul>
+            <li>Электрондардың ауысуын виртуалды тәжірибеде көру.</li>
+            <li>Тотықтырғыш пен тотықсыздандырғышты анықтауға арналған жаттығулар.</li>
+        </ul>
+        <div class="safety">
+            <b>⚠️ Қауіпсіздік:</b> <i>Химиялық реактивтермен жұмыс кезінде тазалық сақтау.</i>
+        </div>
+    </div>
+
+    <a href="index.html" class="btn-back">← Басты бетке қайту</a>
+</div>
 
 </body>
 </html>
