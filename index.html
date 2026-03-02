@@ -3,231 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Виртуалды зертхана | Рахимжанова Айғаным</title>
+    <title>Басты бет | Виртуалды зертхана</title>
     <style>
-        /* НЕГІЗГІ ПАРАМЕТРЛЕР */
-        :root {
-            --bg-dark: #0a192f;
-            --accent-blue: #2563eb;
-            --light-blue: #60a5fa;
-            --text-white: #ffffff;
-            --text-gray: #94a3b8;
-            --card-white: #ffffff;
-            --gradient: linear-gradient(180deg, #0f172a 0%, #1e3a8a 100%);
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-white);
-            line-height: 1.6;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* HEADER */
-        .header {
-            padding: 20px 0;
-            background: rgba(255, 255, 255, 0.03);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .header-content {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .logo-box {
-            background: var(--accent-blue);
-            width: 45px;
-            height: 45px;
-            border-radius: 10px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.5rem;
-        }
-
-        .header-text h2 { font-size: 1.1rem; letter-spacing: 1px; line-height: 1; }
-        .header-text span { font-size: 0.75rem; color: var(--text-gray); text-transform: uppercase; }
-
-        /* HERO SECTION */
-        .hero {
-        padding: 100px 0;
-        background: linear-gradient(135deg, #2e1065 0%, #7c3aed 100%);
-        text-align: center;
-}
-        }
-
-        .badge {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 6px 16px;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            margin-bottom: 25px;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-        }
-
-        .hero h1 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            font-weight: 800;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .hero h1 span { color: var(--light-blue); }
-
-        .hero p {
-            color: #cbd5e1;
-            max-width: 700px;
-            margin-bottom: 40px;
-            font-size: 1.1rem;
-        }
-
-        /* BUTTONS */
-        .hero-btns {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .btn-main {
-            display: inline-block;
-            background: var(--accent-blue);
-            color: white;
-            padding: 16px 35px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.3s;
-            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
-        }
-
-        .btn-secondary {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            padding: 16px 35px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: 0.3s;
-        }
-
-        .btn-main:hover, .btn-secondary:hover {
-            transform: translateY(-3px);
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        .btn-main:hover { background: #1d4ed8; }
-
-        /* ABOUT SECTION */
-        .about {
-            background: var(--card-white);
-            color: #1e293b;
-            padding: 80px 0;
-            border-radius: 40px 40px 0 0;
-            margin-top: -30px;
-        }
-
-        .section-title {
-            display: flex; align-items: center; gap: 12px;
-            font-size: 1.8rem; font-weight: 700; margin-bottom: 30px;
-        }
-
-        .section-title::before {
-            content: ""; width: 6px; height: 35px; background: var(--accent-blue); border-radius: 10px;
-        }
-
-        .author-card {
-            background: #f1f5f9; border-radius: 25px; padding: 35px;
-            margin-top: 50px; border: 1px solid #e2e8f0; max-width: 500px;
-        }
-
-        @media (max-width: 600px) {
-            .hero-btns { flex-direction: column; }
-            .btn-main, .btn-secondary { text-align: center; width: 100%; }
-        }
+        :root { --primary: #10b981; --bg: #f0fdf4; --dark: #064e3b; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); color: var(--dark); margin: 0; }
+        .hero { padding: 100px 0; background: linear-gradient(135deg, #10b981 0%, #064e3b 100%); color: white; text-align: center; border-radius: 0 0 50px 50px; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+        .hero h1 { font-size: 3rem; margin-bottom: 20px; }
+        .hero-btns { display: flex; gap: 20px; justify-content: center; margin-top: 40px; }
+        .btn { padding: 18px 40px; border-radius: 15px; text-decoration: none; font-weight: bold; transition: 0.3s; }
+        .btn-main { background: white; color: var(--primary); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .btn-sec { border: 2px solid white; color: white; }
+        .btn:hover { transform: translateY(-5px); }
+        footer { margin-top: 100px; padding: 40px; text-align: center; background: #064e3b; color: white; border-radius: 50px 50px 0 0; }
     </style>
 </head>
 <body>
-
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo-box">🧪</div>
-                <div class="header-text">
-                    <h2>ВИРТУАЛДЫ</h2>
-                    <span>ЗЕРТХАНА</span>
-                </div>
-            </div>
-        </div>
-    </header>
-
     <section class="hero">
         <div class="container">
-            <div class="badge">⚙️ АВТОРЛЫҚ ЖОБА</div>
-            <h1>«Химия пәні мұғалімдеріне арналған <span>виртуалды зертхана</span>»</h1>
-            <p>
-                Виртуалды зертхананың мақсаты – оқу процесін тиімді ұйымдастыруға, сабақ сапасын 
-                арттыруға және тәжірибелік жұмыстарды заманауи технологиялар арқылы өткізуге 
-                мүмкіндік беру.
-            </p>
-            
+            <h1>Химия пәні мұғалімдеріне арналған <br><span>Виртуалды зертхана</span></h1>
+            <p>Тәжірибелерді заманауи технологиялар арқылы өткізуге мүмкіндік беретін инновациялық ресурс.</p>
             <div class="hero-btns">
-                <a href="labs.html" class="btn-main">Зертханаларды ашу &nbsp; ❯</a>
-                <a href="instructions.html" class="btn-secondary">Нұсқаулықтар &nbsp; 📖</a>
+                <a href="labs.html" class="btn btn-main">Зертханаларды ашу 🧪</a>
+                <a href="instructions.html" class="btn btn-sec">Нұсқаулықтар 📖</a>
             </div>
         </div>
     </section>
 
-    <section class="about">
-        <div class="container">
-            <div class="section-title">Қысқаша сипаттама</div>
-            <p>«Химия мұғалімдеріне арналған виртуалды зертхана сайты» – химия мұғалімдерінің кәсіби қызметін әдістемелік және цифрлық тұрғыдан қолдауға арналған кешенді электрондық орта.</p>
-            <p>Сайт мазмұнына интерактивті зертханалық жұмыстар, виртуалды тәжірибелер, қауіпсіздік техникасы бойынша нұсқаулықтар енгізілген.</p>
-
-            <div class="author-card">
-                <div style="background: var(--accent-blue); width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; color: white;">👤</div>
-                <h4 style="color: var(--accent-blue); font-size: 0.8rem; letter-spacing: 1px;">АВТОР ТУРАЛЫ</h4>
-                <h2 style="font-size: 1.6rem; margin: 10px 0;">Рақымжанова Айғаным Бақытжанқызы</h2>
-                <p style="color: #64748b; font-style: italic;">Цифрлық ресурстарды әзірлеуші және жоба авторы</p>
-            </div>
-        </div>
-    </section>
-<footer style="background: #0f172a; padding: 60px 0 40px; text-align: center; margin-top: 50px; border-radius: 40px 40px 0 0; font-family: sans-serif;">
-    <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
-        <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 25px; color: white;">
-            <div style="background: #2563eb; width: 35px; height: 35px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">🧪</div>
-            <h3 style="letter-spacing: 1px; margin: 0; font-size: 1.2rem; font-weight: bold;">ВИРТУАЛДЫ ХИМИЯ</h3>
-        </div>
-        
-        <p style="color: #94a3b8; margin-bottom: 30px; font-size: 1rem;">Автор: Рақымжанова Айғаным Бақытжанқызы</p>
-        
-        <p style="text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; color: #64748b; margin-bottom: 15px;">Жобаны бағалаңыз</p>
-        
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdao5ybHeBxNue6o_8O8LIFhLciQO0ARnVjFMlSSWI6SnOzFQ/viewform" 
-           target="_blank" 
-           style="display: inline-block; width: 100%; max-width: 400px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); color: #60a5fa; padding: 18px; border-radius: 15px; text-decoration: none; font-weight: 600; transition: 0.3s;">
-            ⭐ Кері байланыс және бағалау &nbsp; ↗
-        </a>
-
-        <div style="margin-top: 50px; font-size: 0.8rem; color: #475569; letter-spacing: 1px;">
-            © 2026 БАРЛЫҚ ҚҰҚЫҚТАР ҚОРҒАЛҒАН.
-        </div>
-    </div>
-</footer>
+    <footer id="footer-shared">
+        <p>Автор: Рақымжанова Айғаным Бақытжанқызы</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdao5ybHeBxNue6o_8O8LIFhLciQO0ARnVjFMlSSWI6SnOzFQ/viewform" target="_blank" style="color: #34d399; text-decoration: none; font-weight: bold;">⭐ Кері байланыс және бағалау ↗</a>
+    </footer>
 </body>
 </html>
