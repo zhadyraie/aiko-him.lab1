@@ -3,156 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Виртуалды зертханалар</title>
+    <title>Зертханалық жұмыстар</title>
     <style>
-        :root {
-            --bg-light: #f8fafc;
-            --text-dark: #0f172a;
-            --accent-blue: #2563eb;
-            --gray-text: #64748b;
-        }
-
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background-color: var(--bg-light);
-            margin: 0; padding: 0;
-            color: var(--text-dark);
-        }
-
-        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-        .page-header { text-align: center; padding: 30px 0; }
-        .badge { background: #dbeafe; color: var(--accent-blue); padding: 6px 16px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; }
-
-        /* КАРТОЧКАЛАР */
-        .lab-card {
-            background: white; border-radius: 30px;
-            margin-bottom: 25px; overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-            transition: 0.3s;
-        }
-
-        .lab-card:hover { transform: translateY(-5px); }
-        .lab-img { width: 100%; height: 180px; display:flex; align-items:center; justify-content:center; font-size:3rem; }
-        .lab-info { padding: 25px; position: relative; }
-        .class-tag { position: absolute; top: -170px; left: 20px; background: white; padding: 4px 12px; border-radius: 10px; font-size: 0.75rem; font-weight: bold; color: var(--accent-blue); }
-        .lab-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 15px; }
-        .btn-row { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 15px; }
-        .more-link { color: var(--accent-blue); text-decoration: none; font-weight: 700; cursor: pointer; }
-
-        /* MODAL STYLE */
-        .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); display: none; align-items: center; justify-content: center; z-index: 100; padding: 15px; }
-        .modal-content { background: white; width: 100%; max-width: 450px; border-radius: 30px; padding: 30px; position: relative; }
-        .theory-box { background: #f8fafc; padding: 15px; border-radius: 15px; margin-bottom: 15px; font-size: 0.9rem; border-left: 4px solid var(--accent-blue); }
-        .goal-box { background: var(--accent-blue); color: white; padding: 15px; border-radius: 15px; font-size: 0.9rem; }
-        .close-x { position: absolute; top: 20px; right: 25px; cursor: pointer; font-size: 1.5rem; color: #94a3b8; }
-        
-        .btn-start {
-            display: block; width: 100%; padding: 16px; margin-top: 20px;
-            background: #10b981; color: white; text-align: center;
-            border: none; border-radius: 15px; font-weight: 700; 
-            text-decoration: none; cursor: pointer; transition: 0.3s;
-        }
-        .btn-start:hover { background: #059669; }
+        :root { --primary: #10b981; --bg: #f0fdf4; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); padding: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; }
+        .back-btn { text-decoration: none; color: #064e3b; font-weight: bold; }
+        .card { background: white; border-radius: 20px; padding: 25px; margin-bottom: 20px; border-left: 6px solid var(--primary); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .btn-go { display: inline-block; background: var(--primary); color: white; padding: 10px 20px; border-radius: 10px; text-decoration: none; margin-top: 10px; }
     </style>
 </head>
 <body>
-
-<div class="container">
-    <header class="page-header">
-        <span class="badge">ВИРТУАЛДЫ ЗЕРТХАНАЛАР</span>
-        <h1 style="margin-top:10px;">Химия әлемі</h1>
-    </header>
-
-    <div id="labs-list"></div>
-
-    <center><a href="index.html" style="color: var(--gray-text); text-decoration: none; font-size: 0.9rem;">← Басты бетке қайту</a></center>
-</div>
-
-<div class="modal" id="labModal">
-    <div class="modal-content">
-        <span class="close-x" onclick="closeLab()">&times;</span>
-        <h3 id="modalTitle" style="margin-bottom: 20px; padding-right: 30px;"></h3>
-        
-        <div class="theory-box">
-            <p id="modalTheory"></p>
+    <div class="container">
+        <div class="header">
+            <h1>Зертханалар</h1>
+            <a href="index.html" class="back-btn">← Басты бет</a>
         </div>
 
-        <div class="goal-box">
-            <p id="modalGoal"></p>
+        <div class="card">
+            <h3>⚖️ Реакция теңестіру</h3>
+            <p>Зат массасының сақталу заңын зерттеу.</p>
+            <a href="https://phet.colorado.edu/sims/html/balancing-chemical-equations/latest/balancing-chemical-equations_all.html?locale=kk" target="_blank" class="btn-go">Бастау ↗</a>
         </div>
 
-        <a id="modalLink" href="#" target="_blank" class="btn-start">Зертхананы бастау (PhET) ↗</a>
+        <div class="card">
+            <h3>🌡️ pH шкаласы</h3>
+            <p>Ерітінділердің қышқылдығы мен сілтілігін анықтау.</p>
+            <a href="https://phet.colorado.edu/sims/html/ph-scale/latest/ph-scale_all.html?locale=kk" target="_blank" class="btn-go">Бастау ↗</a>
+        </div>
     </div>
-</div>
-
-<script>
-    const labsData = [
-        {
-            id: 1, title: "Химиялық реакцияларды теңестіру", icon: "⚖️", color: "#eef2ff", class: "8-СЫНЫП",
-            theory: "ХХимиялық реакцияны теңестіру – реакция теңдеуінде әр элементтің атом саны реагенттер жағында да, өнімдер жағында да бірдей болуын қамтамасыз ету. Бұл зат массасының сақталу заңына негізделеді.
-                Теңестірудің негізгі қадамдары:
-Реакция теңдеуін дұрыс жазу (формулаларды анық көрсету).
-Әр элементтің атом санын санау (сол және оң жақта).
-Коэффициенттер қою (формуланың алдына ғана жазылады).
-Қайта тексеру (барлық элементтердің саны тең бе?).",
-            goal: "Тәжірибе мақсаты: оқушыларға химиялық теңдеулерді дұрыс құруды және теңестіруді үйрету.",
-            link: "https://phet.colorado.edu/sims/html/balancing-chemical-equations/latest/balancing-chemical-equations_all.html?locale=kk"
-        },
-        {
-            id: 2, title: "pH шкаласы ", icon: "🌡️", color: "#fff1f2", class: "8-9 СЫНЫП",
-            theory: " pH шкаласы – ерітіндінің қышқылдық немесе сілтілік дәрежесін көрсететін сандық көрсеткіш. Ол ерітіндідегі сутек иондарының (H⁺) концентрациясына байланысты анықталады. pH мәндерінің аралығы:0-ден 14-ке дейін. pH мәні 0-6 арлығында болса қышқылдық орта, 7-ге тең болса бейтарап орта, 8-14 аралығында болса сілтітік ортаны көрсетеді.",
-            goal: "Тәжірибе мақсаты: ерітінділердің қышқылдық және сілтілік қасиеттерін анықтау.",
-            link: "https://chemcollective.org/vlab/100?locale=kk"
-        },
-        {
-            id: 3, title: "Ерітінділер концентрациясы", icon: "🧪", color: "#f0f9ff", class: "9-СЫНЫП",
-            theory: "Ерітінді – бір немесе бірнеше заттың (ерітінді заттар) басқа затта (еріткіш) біркелкі таралуы арқылы түзілетін сұйық қоспа."
-"Еріткіш – заттарды ерітетін негізгі сұйықтық (мысалы, су).Ерітінді зат (еріткішке қосылған зат) – еріткіште біркелкі тарайтын зат (мысалы, тұз, қант). Концентрация – ерітіндідегі ерітінді заттың мөлшерін сипаттайтын көрсеткіш."
-"Концентрацияның түрлері:"
-"Массалық концентрация: ерітіндідегі зат массасы мен ерітіндінің жалпы массасына қатынасы.Молярлық концентрация: ерітіндідегі заттың молекулалық санының бір литр ерітіндіге қатынасы."
-"Проценттік концентрация: ерітіндідегі заттың жалпы массасына пайызбен қатынасы.",
-            goal: "Тәжірибе мақсаты: Ерітінділердің қасиеттерін және олардың құрамын тәжірибе арқылы анықтау.",
-            link: "https://phet.colorado.edu/sims/html/concentration/latest/concentration_all.html?locale=kk"
-        },
-        {
-            id: 4, title: "Газдардың қасиеттері", icon: "☁️", color: "#f0fdf4", class: "8-СЫНЫП",
-            theory: "Газдар – белгілі пішіні жоқ, көлемі тек оны қоршаған ыдысқа тәуелді болатын заттар. Газдардың молекулалары бір-бірінен алыс орналасады және еркін қозғалады, сондықтан олар бірнеше ерекше қасиеттерге ие.Газдардың негізгі қасиеттері:Көлемі мен пішіні жоқ; Сығылғыштық; Араласу қабілеті; Таралуы; Қысым көрсетуі",
-            goal: "Тәжірибе мақсаты: газдардың қасиеттерін тәжірибе жүзінде бақылап, олардың физикалық және химиялық ерекшеліктерін түсіндіру.",
-            link: "https://phet.colorado.edu/sims/html/gases-intro/latest/gases-intro_all.html?locale=kk"
-        }
-    ];
-
-    const listContainer = document.getElementById('labs-list');
-    
-    labsData.forEach(lab => {
-        listContainer.innerHTML += `
-            <div class="lab-card">
-                <div class="lab-img" style="background: ${lab.color}">${lab.icon}</div>
-                <div class="lab-info">
-                    <span class="class-tag">${lab.class}</span>
-                    <div class="lab-title">${lab.title}</div>
-                    <div class="btn-row">
-                        <span class="more-link" onclick="openLab(${lab.id})">ТОЛЫҒЫРАҚ</span>
-                        <div style="color: var(--accent-blue)">→</div>
-                    </div>
-                </div>
-            </div>
-        `;
-    });
-
-    function openLab(id) {
-        const lab = labsData.find(l => l.id === id);
-        document.getElementById('modalTitle').innerText = lab.title;
-        document.getElementById('modalTheory').innerText = lab.theory;
-        document.getElementById('modalGoal').innerText = lab.goal;
-        document.getElementById('modalLink').href = lab.link;
-        document.getElementById('labModal').style.display = 'flex';
-    }
-
-    function closeLab() {
-        document.getElementById('labModal').style.display = 'none';
-    }
-</script>
-
 </body>
 </html>
