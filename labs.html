@@ -1,36 +1,302 @@
 <!DOCTYPE html>
 <html lang="kk">
 <head>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Зертханалар | Оқу тақырыптары</title>
+    <style>
+        :root {
+            --bg-light: #f8fafc;
+            --text-dark: #0f172a;
+            --accent-blue: #2563eb;
+            --gray-text: #64748b;
+            --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background-color: var(--bg-light);
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* HEADER */
+        .page-header {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .category-badge {
+            background: #dbeafe;
+            color: var(--accent-blue);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-top: 15px;
+            font-weight: 800;
+        }
+
+        /* LAB CARDS */
+        .lab-card {
+            background: white;
+            border-radius: 30px;
+            overflow: hidden;
+            margin-bottom: 25px;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .lab-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .lab-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .lab-content {
+            padding: 25px;
+            position: relative;
+        }
+
+        .class-badge {
+            position: absolute;
+            top: -200px;
+            left: 20px;
+            background: white;
+            padding: 4px 12px;
+            border-radius: 10px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            color: var(--accent-blue);
+        }
+
+        .lab-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            line-height: 1.4;
+            max-width: 80%;
+        }
+
+        .lab-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #f1f5f9;
+            padding-top: 20px;
+        }
+
+        .btn-more {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-circle {
+            width: 40px;
+            height: 40px;
+            background: #f8fafc;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #e2e8f0;
+            cursor: pointer;
+        }
+
+        /* MODAL (Суреттегідей ақпарат терезесі) */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(15, 23, 42, 0.6);
+            display: none; /* Жасырулы */
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: white;
+            width: 90%;
+            max-width: 450px;
+            border-radius: 30px;
+            padding: 30px;
+            position: relative;
+        }
+
+        .modal-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .modal-icon {
+            background: #f59e0b;
+            padding: 10px;
+            border-radius: 12px;
+            color: white;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--gray-text);
+        }
+
+        .theory-box {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        .theory-title {
+            color: var(--accent-blue);
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .goal-box {
+            background: var(--accent-blue);
+            color: white;
+            padding: 20px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+        }
+
+        .modal-footer {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-close-modal {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            background: #f1f5f9;
+            border-radius: 12px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .btn-go {
+            flex: 2;
+            padding: 15px;
+            border: none;
+            background: var(--accent-blue);
+            color: white;
+            border-radius: 12px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
 
-<h1 style="padding:20px;">Зертханалар</h1>
+<div class="container">
+    <header class="page-header">
+        <span class="category-badge">Зертханалар</span>
+        <h1>Оқу тақырыптары</h1>
+    </header>
 
-<div class="about">
+    <div class="lab-card">
+        <div style="position: relative;">
+            <img src="https://phet.colorado.edu/sims/html/balancing-chemical-equations/latest/balancing-chemical-equations-600.png" class="lab-image">
+            <span class="class-badge">8-СЫНЫП</span>
+        </div>
+        <div class="lab-content">
+            <div class="lab-title">Химиялық реакцияларды теңестіру</div>
+            <div class="lab-footer">
+                <a href="javascript:void(0)" class="btn-more" onclick="openModal()">Толығырақ</a>
+                <div class="btn-circle">→</div>
+            </div>
+        </div>
+    </div>
 
-<div class="author">
-<h3>Реакция теңестіру →</h3>
+    <div class="lab-card">
+        <div style="position: relative;">
+            <img src="https://phet.colorado.edu/sims/html/ph-scale/latest/ph-scale-600.png" class="lab-image">
+            <span class="class-badge">8-9 СЫНЫП</span>
+        </div>
+        <div class="lab-content">
+            <div class="lab-title">pH шкаласы және индикаторлар</div>
+            <div class="lab-footer">
+                <a href="#" class="btn-more">Толығырақ</a>
+                <div class="btn-circle">→</div>
+            </div>
+        </div>
+    </div>
 </div>
 
-<div class="author">
-<h3>pH шкаласы →</h3>
+<div class="modal-overlay" id="infoModal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <div class="modal-header">
+            <div class="modal-icon">🧪</div>
+            <div style="font-weight: 800; font-size: 1.1rem; line-height: 1.2;">Реакция өнімдері мен қалдықтар</div>
+        </div>
+
+        <div class="theory-box">
+            <span class="theory-title">Теориялық негіз</span>
+            <p style="margin:0; font-size: 0.9rem;">Реакцияға түсетін заттардың біреуі артық болған жағдайда өнімнің шығымын есептеу әдістері.</p>
+        </div>
+
+        <div class="goal-box">
+            <span style="font-size: 0.75rem; font-weight: 800; text-transform: uppercase; opacity: 0.8;">Тәжірибе мақсаты</span>
+            <p style="margin:5px 0 0 0; font-size: 0.9rem;">Стехиометриялық есептеулер жүргізу.</p>
+        </div>
+
+        <div class="modal-footer">
+            <button class="btn-close-modal" onclick="closeModal()">Жабу</button>
+            <button class="btn-go">Зертханаға өту</button>
+        </div>
+    </div>
 </div>
 
-<div class="author">
-<h3>Концентрация →</h3>
-</div>
-
-<div class="author">
-<h3>Газдар →</h3>
-</div>
-
-<div class="author">
-<h3>ТТР →</h3>
-</div>
-
-</div>
+<script>
+    function openModal() {
+        document.getElementById('infoModal').style.display = 'flex';
+    }
+    function closeModal() {
+        document.getElementById('infoModal').style.display = 'none';
+    }
+    // Терезе сыртын басқанда жабу
+    window.onclick = function(event) {
+        let modal = document.getElementById('infoModal');
+        if (event.target == modal) {
+            closeModal();
+        }
+    }
+</script>
 
 </body>
 </html>
+
