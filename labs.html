@@ -3,300 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Зертханалар | Оқу тақырыптары</title>
+    <title>Виртуалды зертханалар</title>
     <style>
         :root {
             --bg-light: #f8fafc;
             --text-dark: #0f172a;
             --accent-blue: #2563eb;
             --gray-text: #64748b;
-            --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
         }
 
         body {
-            font-family: 'Segoe UI', system-ui, sans-serif;
+            font-family: 'Segoe UI', sans-serif;
             background-color: var(--bg-light);
-            margin: 0;
-            padding: 0;
+            margin: 0; padding: 0;
             color: var(--text-dark);
         }
 
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        .page-header { text-align: center; padding: 30px 0; }
+        .badge { background: #dbeafe; color: var(--accent-blue); padding: 6px 16px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; }
 
-        /* HEADER */
-        .page-header {
-            text-align: center;
-            padding: 40px 0;
-        }
-
-        .category-badge {
-            background: #dbeafe;
-            color: var(--accent-blue);
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin-top: 15px;
-            font-weight: 800;
-        }
-
-        /* LAB CARDS */
+        /* КАРТОЧКАЛАР */
         .lab-card {
-            background: white;
-            border-radius: 30px;
-            overflow: hidden;
-            margin-bottom: 25px;
-            box-shadow: var(--card-shadow);
-            transition: transform 0.3s ease;
+            background: white; border-radius: 30px;
+            margin-bottom: 25px; overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            transition: 0.3s;
         }
 
-        .lab-card:hover {
-            transform: translateY(-5px);
-        }
+        .lab-card:hover { transform: translateY(-5px); }
+        .lab-img { width: 100%; height: 180px; display:flex; align-items:center; justify-content:center; font-size:3rem; }
+        .lab-info { padding: 25px; position: relative; }
+        .class-tag { position: absolute; top: -170px; left: 20px; background: white; padding: 4px 12px; border-radius: 10px; font-size: 0.75rem; font-weight: bold; color: var(--accent-blue); }
+        .lab-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 15px; }
+        .btn-row { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 15px; }
+        .more-link { color: var(--accent-blue); text-decoration: none; font-weight: 700; cursor: pointer; }
 
-        .lab-image {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            border-bottom: 1px solid #f1f5f9;
+        /* MODAL STYLE */
+        .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); display: none; align-items: center; justify-content: center; z-index: 100; padding: 15px; }
+        .modal-content { background: white; width: 100%; max-width: 450px; border-radius: 30px; padding: 30px; position: relative; }
+        .theory-box { background: #f8fafc; padding: 15px; border-radius: 15px; margin-bottom: 15px; font-size: 0.9rem; border-left: 4px solid var(--accent-blue); }
+        .goal-box { background: var(--accent-blue); color: white; padding: 15px; border-radius: 15px; font-size: 0.9rem; }
+        .close-x { position: absolute; top: 20px; right: 25px; cursor: pointer; font-size: 1.5rem; color: #94a3b8; }
+        
+        .btn-start {
+            display: block; width: 100%; padding: 16px; margin-top: 20px;
+            background: #10b981; color: white; text-align: center;
+            border: none; border-radius: 15px; font-weight: 700; 
+            text-decoration: none; cursor: pointer; transition: 0.3s;
         }
-
-        .lab-content {
-            padding: 25px;
-            position: relative;
-        }
-
-        .class-badge {
-            position: absolute;
-            top: -200px;
-            left: 20px;
-            background: white;
-            padding: 4px 12px;
-            border-radius: 10px;
-            font-size: 0.75rem;
-            font-weight: bold;
-            color: var(--accent-blue);
-        }
-
-        .lab-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 40px;
-            line-height: 1.4;
-            max-width: 80%;
-        }
-
-        .lab-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-top: 1px solid #f1f5f9;
-            padding-top: 20px;
-        }
-
-        .btn-more {
-            color: var(--accent-blue);
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .btn-circle {
-            width: 40px;
-            height: 40px;
-            background: #f8fafc;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid #e2e8f0;
-            cursor: pointer;
-        }
-
-        /* MODAL (Суреттегідей ақпарат терезесі) */
-        .modal-overlay {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(15, 23, 42, 0.6);
-            display: none; /* Жасырулы */
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-        }
-
-        .modal-content {
-            background: white;
-            width: 90%;
-            max-width: 450px;
-            border-radius: 30px;
-            padding: 30px;
-            position: relative;
-        }
-
-        .modal-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 25px;
-        }
-
-        .modal-icon {
-            background: #f59e0b;
-            padding: 10px;
-            border-radius: 12px;
-            color: white;
-        }
-
-        .close-btn {
-            position: absolute;
-            top: 25px;
-            right: 25px;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--gray-text);
-        }
-
-        .theory-box {
-            background: #f8fafc;
-            padding: 20px;
-            border-radius: 20px;
-            margin-bottom: 20px;
-        }
-
-        .theory-title {
-            color: var(--accent-blue);
-            font-size: 0.75rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-            display: block;
-        }
-
-        .goal-box {
-            background: var(--accent-blue);
-            color: white;
-            padding: 20px;
-            border-radius: 20px;
-            margin-bottom: 30px;
-        }
-
-        .modal-footer {
-            display: flex;
-            gap: 10px;
-        }
-
-        .btn-close-modal {
-            flex: 1;
-            padding: 15px;
-            border: none;
-            background: #f1f5f9;
-            border-radius: 12px;
-            font-weight: 700;
-            cursor: pointer;
-        }
-
-        .btn-go {
-            flex: 2;
-            padding: 15px;
-            border: none;
-            background: var(--accent-blue);
-            color: white;
-            border-radius: 12px;
-            font-weight: 700;
-            cursor: pointer;
-        }
+        .btn-start:hover { background: #059669; }
     </style>
 </head>
 <body>
 
 <div class="container">
     <header class="page-header">
-        <span class="category-badge">Зертханалар</span>
-        <h1>Оқу тақырыптары</h1>
+        <span class="badge">ВИРТУАЛДЫ ЗЕРТХАНАЛАР</span>
+        <h1 style="margin-top:10px;">Химия әлемі</h1>
     </header>
 
-    <div class="lab-card">
-        <div style="position: relative;">
-            <img src="https://phet.colorado.edu/sims/html/balancing-chemical-equations/latest/balancing-chemical-equations-600.png" class="lab-image">
-            <span class="class-badge">8-СЫНЫП</span>
-        </div>
-        <div class="lab-content">
-            <div class="lab-title">Химиялық реакцияларды теңестіру</div>
-            <div class="lab-footer">
-                <a href="javascript:void(0)" class="btn-more" onclick="openModal()">Толығырақ</a>
-                <div class="btn-circle">→</div>
-            </div>
-        </div>
-    </div>
+    <div id="labs-list"></div>
 
-    <div class="lab-card">
-        <div style="position: relative;">
-            <img src="https://phet.colorado.edu/sims/html/ph-scale/latest/ph-scale-600.png" class="lab-image">
-            <span class="class-badge">8-9 СЫНЫП</span>
-        </div>
-        <div class="lab-content">
-            <div class="lab-title">pH шкаласы және индикаторлар</div>
-            <div class="lab-footer">
-                <a href="#" class="btn-more">Толығырақ</a>
-                <div class="btn-circle">→</div>
-            </div>
-        </div>
-    </div>
+    <center><a href="index.html" style="color: var(--gray-text); text-decoration: none; font-size: 0.9rem;">← Басты бетке қайту</a></center>
 </div>
 
-<div class="modal-overlay" id="infoModal">
+<div class="modal" id="labModal">
     <div class="modal-content">
-        <span class="close-btn" onclick="closeModal()">&times;</span>
-        <div class="modal-header">
-            <div class="modal-icon">🧪</div>
-            <div style="font-weight: 800; font-size: 1.1rem; line-height: 1.2;">Реакция өнімдері мен қалдықтар</div>
-        </div>
-
+        <span class="close-x" onclick="closeLab()">&times;</span>
+        <h3 id="modalTitle" style="margin-bottom: 20px; padding-right: 30px;"></h3>
+        
         <div class="theory-box">
-            <span class="theory-title">Теориялық негіз</span>
-            <p style="margin:0; font-size: 0.9rem;">Реакцияға түсетін заттардың біреуі артық болған жағдайда өнімнің шығымын есептеу әдістері.</p>
+            <p id="modalTheory"></p>
         </div>
 
         <div class="goal-box">
-            <span style="font-size: 0.75rem; font-weight: 800; text-transform: uppercase; opacity: 0.8;">Тәжірибе мақсаты</span>
-            <p style="margin:5px 0 0 0; font-size: 0.9rem;">Стехиометриялық есептеулер жүргізу.</p>
+            <p id="modalGoal"></p>
         </div>
 
-        <div class="modal-footer">
-            <button class="btn-close-modal" onclick="closeModal()">Жабу</button>
-            <button class="btn-go">Зертханаға өту</button>
-        </div>
+        <a id="modalLink" href="#" target="_blank" class="btn-start">Зертхананы бастау (PhET) ↗</a>
     </div>
 </div>
 
 <script>
-    function openModal() {
-        document.getElementById('infoModal').style.display = 'flex';
-    }
-    function closeModal() {
-        document.getElementById('infoModal').style.display = 'none';
-    }
-    // Терезе сыртын басқанда жабу
-    window.onclick = function(event) {
-        let modal = document.getElementById('infoModal');
-        if (event.target == modal) {
-            closeModal();
+    const labsData = [
+        {
+            id: 1, title: "Химиялық реакцияларды теңестіру", icon: "⚖️", color: "#eef2ff", class: "8-СЫНЫП",
+            theory: "Реакция теңдеуінде әр элементтің атом саны реагенттер мен өнімдер жағында бірдей болуы керек. Бұл зат массасының сақталу заңы.",
+            goal: "Коэффициенттер қою арқылы теңдеулерді теңестіруді үйрену.",
+            link: "https://phet.colorado.edu/sims/html/balancing-chemical-equations/latest/balancing-chemical-equations_all.html?locale=kk"
+        },
+        {
+            id: 2, title: "pH шкаласы және индикаторлар", icon: "🌡️", color: "#fff1f2", class: "8-9 СЫНЫП",
+            theory: "pH мәні ерітінді ортасын көрсетеді: 0-7 қышқыл, 7 бейтарап, 7-14 сілтілік.",
+            goal: "Түрлі заттардың pH деңгейін анықтауды үйрену.",
+            link: "https://phet.colorado.edu/sims/html/ph-scale/latest/ph-scale_all.html?locale=kk"
+        },
+        {
+            id: 3, title: "Ерітінділер концентрациясы", icon: "🧪", color: "#f0f9ff", class: "9-СЫНЫП",
+            theory: "Ерітіндінің концентрациясы – еріген заттың ерітіндінің жалпы көлеміндегі немесе массасындағы мөлшері.",
+            goal: "Ерітінді дайындау және молярлықты есептеу.",
+            link: "https://phet.colorado.edu/sims/html/concentration/latest/concentration_all.html?locale=kk"
+        },
+        {
+            id: 4, title: "Газдардың қасиеттері", icon: "☁️", color: "#f0fdf4", class: "8-СЫНЫП",
+            theory: "Газдардың қысымы, көлемі және температурасы арасындағы байланысты зерттеу (Бойль-Мариотт, Гей-Люссак заңдары).",
+            goal: "Газ молекулаларының қозғалысын бақылау.",
+            link: "https://phet.colorado.edu/sims/html/gases-intro/latest/gases-intro_all.html?locale=kk"
         }
+    ];
+
+    const listContainer = document.getElementById('labs-list');
+    
+    labsData.forEach(lab => {
+        listContainer.innerHTML += `
+            <div class="lab-card">
+                <div class="lab-img" style="background: ${lab.color}">${lab.icon}</div>
+                <div class="lab-info">
+                    <span class="class-tag">${lab.class}</span>
+                    <div class="lab-title">${lab.title}</div>
+                    <div class="btn-row">
+                        <span class="more-link" onclick="openLab(${lab.id})">ТОЛЫҒЫРАҚ</span>
+                        <div style="color: var(--accent-blue)">→</div>
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+
+    function openLab(id) {
+        const lab = labsData.find(l => l.id === id);
+        document.getElementById('modalTitle').innerText = lab.title;
+        document.getElementById('modalTheory').innerText = lab.theory;
+        document.getElementById('modalGoal').innerText = lab.goal;
+        document.getElementById('modalLink').href = lab.link;
+        document.getElementById('labModal').style.display = 'flex';
+    }
+
+    function closeLab() {
+        document.getElementById('labModal').style.display = 'none';
     }
 </script>
 
 </body>
 </html>
-
