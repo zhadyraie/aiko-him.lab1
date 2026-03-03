@@ -293,3 +293,110 @@ h1 span {
 .res-btn span {
     font-size: 1.2rem;
 }
+/* ПАСТЕЛЬДІ ПАЛИТРА */
+:root {
+    --bg-color: #fffafb;      /* Өте ашық қызғылт фон */
+    --card-bg: #ffffff;       /* Ақ карточкалар */
+    --accent-pink: #f48fb1;   /* Негізгі пастельді қызғылт */
+    --dark-pink: #ad1457;     /* Қанық қызғылт (мәтін үшін) */
+    --soft-gray: #757575;     /* Қосымша мәтін түсі */
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-color);
+    color: #444;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* ГЛАВНЫЙ ЗАГОЛОВОК */
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--dark-pink);
+    text-align: center;
+    padding: 50px 0;
+    margin: 0;
+    background: linear-gradient(180deg, #fce4ec 0%, var(--bg-color) 100%);
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+
+/* КАРТОЧКАЛАР СТИЛІ */
+.card {
+    background: var(--card-bg);
+    border-radius: 25px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 20px rgba(173, 20, 87, 0.05); /* Жеңіл көлеңке */
+    border: 1px solid #fce4ec;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Тышқанды апарғанда көтерілуі */
+}
+
+/* БАТЫРМАЛАР СТИЛІ */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-style: italic;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--dark-pink);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-pink);
+    box-shadow: 0 5px 15px rgba(244, 143, 177, 0.4);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--dark-pink);
+    border: 2px solid var(--accent-pink);
+}
+
+.btn-outline:hover {
+    background-color: var(--accent-pink);
+    color: white;
+}
+
+/* ИНФОРМАЦИЯЛЫҚ БЛОКТАР (Теория/Мақсаты) */
+.info-box {
+    background: #fff5f7;
+    border-left: 5px solid var(--accent-pink);
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 0 15px 15px 0;
+    font-style: italic;
+}
+
+/* ФУТЕРДЕГІ СІЛТЕМЕЛЕР */
+.footer-links {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #fce4ec;
+}
+
+.back-link {
+    color: var(--dark-pink);
+    text-decoration: none;
+    font-weight: bold;
+}
