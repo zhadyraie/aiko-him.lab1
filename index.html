@@ -47,6 +47,10 @@
             box-shadow: 0 4px 15px rgba(244, 143, 177, 0.15);
             border-bottom: 2px solid var(--primary-pink);
         }
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+<nav class="nav-menu" id="navMenu">
+    ...
+</nav>
 
         .header-content {
             display: flex;
@@ -275,6 +279,15 @@
             </div>
         </div>
     </footer>
-
+<script>
+function toggleMenu() {
+    var menu = document.getElementById("navMenu");
+    if (menu.style.display === "flex") {
+        menu.style.display = "none";
+    } else {
+        menu.style.display = "flex";
+    }
+}
+</script>
 </body>
 </html>
