@@ -477,20 +477,25 @@ h1 {
     color: var(--dark-pink);
 }
 
+/* ===== MOBILE NAV FIX ===== */
 @media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-    }
-    .nav-menu {
-        display: none;
+
+    .nav-container {
         flex-direction: column;
-        background: var(--white);
-        width: 100%;
-        padding: 15px 0;
+        align-items: center;
     }
+
+    .nav-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 15px;
+    }
+
     .nav-menu a {
-        margin: 10px 20px;
+        margin: 8px 0;
     }
+
 }
 
     </style>
