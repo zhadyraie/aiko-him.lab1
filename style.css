@@ -586,3 +586,47 @@ h1 {
     color: var(--dark-pink);
     font-weight: 700;
 }
+/* Басты контейнерді флекс қылу */
+.header-container {
+    display: flex;
+    justify-content: space-between; /* Лого сол жақта, меню оң жақта */
+    align-items: center;            /* Ортасымен түзулеу */
+    padding: 10px 0;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Мәзірді қатарға тізу */
+.nav-menu {
+    display: flex;
+    gap: 25px; /* Сілтемелер арасындағы қашықтық */
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #ad1457; /* Қанық қызғылт */
+    font-weight: 600;
+    font-size: 1rem;
+    transition: 0.3s;
+    padding: 5px 10px;
+}
+
+.nav-menu a:hover {
+    color: #f48fb1; /* Тышқанды апарғанда ашық қызғылт */
+}
+
+.nav-menu a.active {
+    border-bottom: 2px solid #ad1457; /* Белсенді беттің астын сызу */
+}
+
+/* Мобильді телефондар үшін (экран тар болса, астына түседі) */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
