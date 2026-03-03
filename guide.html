@@ -40,6 +40,48 @@
             font-size: 2.2rem;
             margin: 0;
         }
+        /* ===== НАВИГАЦИЯ ===== */
+
+.nav-menu {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #ad1457;
+    font-weight: 600;
+    position: relative;
+    transition: 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #f06292;
+}
+
+.nav-menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background: #f06292;
+    transition: 0.3s;
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+/* Актив бет */
+.nav-menu a.active {
+    color: #f06292;
+}
+
+.nav-menu a.active::after {
+    width: 100%;
+}
 
         .card {
             background: white;
@@ -162,9 +204,9 @@
             </div>
 
             <nav class="nav-menu">
-                <a href="index.html" class="active">Басты бет</a>
+               <a href="index.html">Басты бет</a>
                 <a href="labs.html">Зертханалар</a>
-                <a href="guide.html">Нұсқаулық</a>
+                <a href="guide.html" class="active">Нұсқаулық</a>
             </nav>
 
         </div>
