@@ -476,3 +476,59 @@ h1 {
     color: var(--accent-pink);
     text-shadow: 0 0 8px rgba(244, 143, 177, 0.5);
 }
+/* Мәзірді реттеу */
+.header-content {
+    display: flex;
+    justify-content: space-between; /* Лого сол жақта, меню оң жақта */
+    align-items: center;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 25px; /* Сілтемелер арасындағы қашықтық */
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--dark-pink);
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase; /* Бас әріптермен */
+    letter-spacing: 1px;
+    transition: 0.3s;
+    position: relative;
+    padding: 5px 0;
+}
+
+/* Сілтеме астындағы әдемі сызық анимациясы */
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-pink);
+    transition: 0.3s;
+}
+
+.nav-menu a:hover::after, 
+.nav-menu a.active::after {
+    width: 100%;
+}
+
+.nav-menu a:hover {
+    color: var(--primary-pink);
+}
+
+/* Активті беттің түсін ерекшелеу */
+.nav-menu a.active {
+    color: var(--dark-pink);
+    font-weight: 700;
+}
