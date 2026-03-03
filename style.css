@@ -477,10 +477,64 @@ h1 {
     text-shadow: 0 0 8px rgba(244, 143, 177, 0.5);
 }
 /* Мәзірді реттеу */
+/* Басты контейнерді реттеу */
 .header-content {
     display: flex;
     justify-content: space-between; /* Лого сол жақта, меню оң жақта */
     align-items: center;
+    padding: 10px 0;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Мәзір стильдері */
+.nav-links {
+    display: flex;
+    gap: 30px; /* Сілтемелер арасындағы қашықтық */
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #ad1457; /* Қанық қызғылт */
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    padding: 5px 0;
+    transition: 0.3s;
+}
+
+/* Тышқанды апарғанда астынан сызық шығу анимациясы */
+.nav-item::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #f48fb1;
+    transition: 0.3s;
+}
+
+.nav-item:hover::after, 
+.nav-item.active::after {
+    width: 100%;
+}
+
+.nav-item:hover {
+    color: #f48fb1;
+}
+
+/* Мобильді нұсқа үшін (экран кішірейгенде) */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Телефонда жасыру (кейін скриптпен ашу үшін) */
+    }
 }
 
 .logo-area {
