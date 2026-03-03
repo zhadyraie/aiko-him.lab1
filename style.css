@@ -26,6 +26,11 @@ body {
     color: var(--text-color);
     background-color: var(--bg-light);
 }
+.nav-menu {
+    display: flex;
+    gap: 35px;
+    align-items: center;
+}
 
 .container {
     width: 90%;
