@@ -246,3 +246,50 @@ h1 span {
     border: 2px solid #f48fb1;
     transform: translateY(-3px); /* Тышқанды апарғанда аздап көтеріледі */
 }
+.resources-section {
+    margin-top: 60px;
+    text-align: center;
+    padding: 30px;
+    background: white;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+}
+
+.resources-section h3 {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--dark-pink);
+    margin-bottom: 25px;
+}
+
+.resource-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.res-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--bg-pastel);
+    color: var(--dark-pink);
+    padding: 12px 25px;
+    border-radius: 15px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: 1px solid var(--primary-pink);
+    transition: 0.3s ease;
+}
+
+.res-btn:hover {
+    background: var(--primary-pink);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.res-btn span {
+    font-size: 1.2rem;
+}
