@@ -69,6 +69,51 @@
             <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         </div>
     </header>
+        /* Мәзірді реттеу */
+.nav-menu {
+    display: flex;
+    justify-content: flex-start; /* Сілтемелерді сол жаққа жинау */
+    gap: 20px; /* Сілтемелер арасындағы қашықтық */
+    margin-bottom: 20px; /* Логотипке дейінгі қашықтық */
+    border-bottom: 1px solid #fce4ec; /* Нәзік сызық */
+    padding-bottom: 10px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--dark-pink);
+    font-weight: 600;
+    font-size: 0.95rem;
+    position: relative;
+    padding: 5px 0;
+}
+
+/* Тышқанды апарғанда астынан сызық шығу анимациясы */
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-pink);
+    transition: 0.3s;
+}
+
+.nav-menu a:hover::after, 
+.nav-menu a.active::after {
+    width: 100%;
+}
+
+.nav-menu a:hover {
+    color: var(--primary-pink);
+}
+
+/* Активті беттің түсін ерекшелеу */
+.nav-menu a.active {
+    color: var(--dark-pink);
+    font-weight: 700;
+}
             
             <nav class="nav-menu">
                 <a href="index.html" class="active">Басты бет</a>
