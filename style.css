@@ -6,7 +6,13 @@
     --white: #ffffff;
     --bg-light: #fff5f8;
 }
-
+.highlight {
+    color: var(--dark-pink);
+    font-weight: bold;
+    background: #fce4ec;
+    padding: 3px 8px;
+    border-radius: 8px;
+}
 * {
     margin: 0;
     padding: 0;
