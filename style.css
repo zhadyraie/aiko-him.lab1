@@ -467,3 +467,12 @@ h1 {
         display: block;
     }
 }
+.main-header {
+    background: linear-gradient(135deg, #ffffff, #fff0f5);
+    box-shadow: 0 5px 20px rgba(244, 143, 177, 0.2);
+}
+
+.nav-menu a:hover {
+    color: var(--accent-pink);
+    text-shadow: 0 0 8px rgba(244, 143, 177, 0.5);
+}
